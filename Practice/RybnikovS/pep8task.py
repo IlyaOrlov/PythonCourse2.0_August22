@@ -12,8 +12,6 @@ class shuffler:  # CapWords
         self.map = {}
 
     def rename(self, dirname, output):
-        # Переопределение встр. фун., для избежания конфликта добавить в конце _
-        # В библиотеки os есть функция rename, забыл, что для вызова функции требуется использовать os.rename
           mp3s = []  # Стилевая ошибка (4 пробела)
         for root, directories, files in os.walk(dirname):
             for file in files:
