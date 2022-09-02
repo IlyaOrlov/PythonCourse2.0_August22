@@ -4,6 +4,6 @@ distance = input("Расстояние в км: ")
 
 diff = int(start) - int(end)
 
-result = (int(diff) / int(distance))*100
+result = (diff / int(distance))*100
 
 print(f'Расход топлива на: {distance} км = {result} литров')
