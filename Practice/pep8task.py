@@ -1,8 +1,8 @@
 import sys
 import os
-import hashlib  # hash_lib
+import hashlib
 import ast
-import argparse # arg_parse
+import argparse
 from time import *
 
 
