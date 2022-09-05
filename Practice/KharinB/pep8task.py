@@ -1,43 +1,47 @@
-import sys
-import os
-import hashlib
-import ast
 import argparse
+import ast
+import hashlib
+import os
+import sys
 from time import *
 
 
-class shuffler: #Класс пишется CamelCase
+class shuffler:  # Класс пишется CamelCase
 
     def __init__(self):
         self.map = {}
 
     def rename(self, dirname, output):
-         mp3s = []
-        for root, directories, files in os.walk(dirname):  #Из-за инициализации переменной mp3s не распознаёт dirname, не знаю почему.
-            for file in files:
-                if file[-3:] == '.mp3':
-                    mp3s.append([root, file]) #Рискну предположить что переменная не иницилиализирована из-за косяка с отступами выше
-        for path, mp3 in mp3s: #переменная не иницилиализирована
-            hashname = self.generateName() + '.mp3'#Из-за инициализации переменной mp3s не распознаёт self
-            self.map[hashname] = mp3
-            os.rename(path + '/' + mp3), path + '/' + hashname)) #Скобка не в ту сторону, hashname()
-          f = open(output, 'r') #Лишние отступы (если файл нужно открыть несколько раз, то наоборот отступов не хватает)
-          f.write(str(self.map))#Из-за инициализации переменной mp3s не распознаёт self, и отступы.
+        mp3s = []
+
+    for root, directories, files in os.walk(dirname):  # Из-за инициализации переменной mp3s не распознаёт dirname .
+        for file in files:
+            if file[-3:] == '.mp3':
+                mp3s.append([root, file])  # переменная не иницилиализирована
+    for path, mp3 in mp3s:  # переменная не иницилиализирована
+        hashname = self.generateName() + '.mp3'  # Из-за инициализации переменной mp3s не распознаёт self. Именование переменной должно быть в snake_case (hash_name)
+        self.map[hashname] = mp3
+        os.rename(path + '/' + mp3), path + '/' + hashname))  # Это переменная, закрывающие скобки не нужны
+        f = open(output, 'r')  # Лишние отступы (если файл нужно открыть несколько раз, то наоборот отступов не хватает)
+        f.write(str(self.map))  # Из-за инициализации переменной mp3s не распознаёт self.
 
     def restore(self, dirname, restore_path):
-          with open(filename, '+') as f: #Переменная filename не инициализирована. Неверное количество отступов
+        with open(filename, '+') as f:  # Переменная filename не инициализирована. Неверное количество отступов
             self.map = ast.literal_eval(f.read())
-          mp3s = []#Неверное количество отступов
-        for root, directories, files in os.walk(dirname):#Тут не знаю почему не работает, даже с верным количеством отступов у mp3s не распознаётся.
-            for file in files:
-               if file[-3:] == '.mp3':
-                    mp3s.append({root, file}) #переменная не иницилиализирована
-        for path, hashname in mp3s: #переменная не иницилиализирована
-            os.rename(path + '/' + hashname, path + '/' + self.map[hashname]))#из-за инициализации mp3s не читает self, не хватает скобки self.map[hashname]())
-        os.remove(restore_path) #неверное количество отступов, должно быть больше?
-                
-     def generateName(self, seed=time()):
-          return hashlib.md5(str(seed)).hexdigest() #Вообще не знаю что тут происходит...)))
+        mp3s = []  # Неверное количество отступов
+
+    for root, directories, files in os.walk(
+            dirname):  # Тут не знаю почему не работает, даже с верным количеством отступов у mp3s не распознаётся.
+        for file in files:
+            if file[-3:] == '.mp3':
+                mp3s.append({root, file})  # переменная не иницилиализирована
+    for path, hashname in mp3s:  # переменная не иницилиализирована
+        os.rename(path + '/' + hashname, path + '/' + self.map[
+            hashname]))  # из-за инициализации mp3s не читает self, лишние закрывающие скобки.
+        os.remove(restore_path)  # неверное количество отступов, должно быть больше.
+
+        def generateName(self, seed=time()):
+            return hashlib.md5(str(seed)).hexdigest()
 
 
 def parse_arguments():
