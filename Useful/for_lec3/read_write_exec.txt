@@ -1,0 +1,31 @@
+RWE
+
+s1 = Вася: (rwe = 7)
+read = True   # 1
+write = True  # 1
+exec = True   # 1
+
+ 111
+&110
+ 110 (6)
+
+s2 = Петя: (rwe = 4)
+read = True   # 1
+write = False # 0
+exec = False  # 0 
+
+ 100
+&110
+ 100 (4)
+
+
+if s1.read == True and s1.write == True
+if s2.read == True and s2.write == True
+
+110
+
+if s1.rwe & 6 == 6:
+
+
+ 
+
