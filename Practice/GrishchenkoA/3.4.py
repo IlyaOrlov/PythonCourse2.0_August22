@@ -1,4 +1,4 @@
-a=input("Введите слово: ")
-с=a.replace("А","*",-1)
-print(с)
+word = input("Введите слово: ")
+corrected_word = word.replace("А" , "*")
+print(corrected_word)
 
