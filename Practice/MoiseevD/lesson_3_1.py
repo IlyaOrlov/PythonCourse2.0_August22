@@ -1,5 +1,5 @@
-def rectangle(x,y):
-    return ((x + y) * 2)
+def rectangle(x, y):
+    return (x + y) * 2
 
 
 x = float(input('Введите длину прямоугольника в мм  - x: '))

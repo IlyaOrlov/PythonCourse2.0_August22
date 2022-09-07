@@ -20,7 +20,7 @@ class shuffler:   # CapWords
         for path, mp3 in mp3s:
             hashname = self.generateName() + '.mp3'     # hash_name, generate_Name
             self.map[hashname] = mp3                    # hash_name
-            os.rename(path + '/' + mp3), path + '/' + hashname))  # не хватает скобок (( нижнего подчеркивания has_hname
+            os.rename(path + '/' + mp3), path + '/' + hashname))  # достаточно одной открывающейся и одной закрывающейся скобки, нижнего подчеркивания has_hname
           f = open(output, 'r')
           f.write(str(self.map))
 

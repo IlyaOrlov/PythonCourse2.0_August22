@@ -1,5 +1,5 @@
 def average_speed(way, time):
-    return (way/time)
+    return way/time
 
 
 w = int(input('Введите сколько вы проехали км: '))
