@@ -4,7 +4,5 @@ def palindrom(line):
 
 word_line = input('Введите слово: ')
 low_letters = word_line.lower()
-if palindrom(low_letters):
-    print(palindrom(low_letters))
-else:
+if True:
     print(palindrom(low_letters))
