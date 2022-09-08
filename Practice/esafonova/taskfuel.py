@@ -5,4 +5,4 @@ distance = input("Расстояние: ")
 diff = int(start) - int(end)
 result = diff / int(distance)
 
-print(f"Расход на км: {result}")
+print(f"Средний расход на км: {result}")
