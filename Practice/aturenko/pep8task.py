@@ -1,3 +1,4 @@
+
 import sys
 import os
 import hashlib
@@ -39,8 +40,7 @@ class shuffler: # The name of the class must begin with a capital letter : class
                if file[-3:] == '.mp3': # Should better use ".endswith()": if file.endswith('.mp3'):
                     mp3s.append({root, file})
         for path, hashname in mp3s:
-            os.rename(path + '/' + hashname, path + '/' + self.map[hashname])) # The path should be
-                                                                               # words of small letters with underscores
+            os.rename(path + '/' + hashname, path + '/' + self.map[hashname])) 
         os.remove(restore_path)
 
     def generateName(self, seed=time()): # It is better to use underscores in the function name to separate words,
