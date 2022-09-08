@@ -8,5 +8,4 @@ time2 = float(input("Введите время движения (минуты): 
 fulltime = time1 + time2 / 60
 distance = float(input("Введите пройденное расстояние (км): "))
 speed = avg_speed (distance, fulltime)
-a=2
 print(f"Средняя скорость {speed:.2f} км/ч")
