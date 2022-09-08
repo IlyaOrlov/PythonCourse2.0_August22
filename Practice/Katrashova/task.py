@@ -1,2 +1,2 @@
 i = input("Введите данные: ")
-print(f"Echo:(i)")
+print(f"Echo:{i}")
