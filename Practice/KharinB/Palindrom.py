@@ -5,5 +5,5 @@ for i in range(len_w // 2):
         print(False)
         break
 
-    elif i + 1 == len_w // 2:
-        print(True)
+else:
+    print(True)
