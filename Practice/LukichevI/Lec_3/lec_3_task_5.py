@@ -7,7 +7,7 @@
 
 word = input("Введите слово для проверки на палиндромность: ")
 word = word.lower()
-print(word[::] == word[::-1])
+print(word == word[::-1])
 
 
 
