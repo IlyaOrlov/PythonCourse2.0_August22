@@ -14,16 +14,17 @@ class shuffler:  # Класс пишется CamelCase
     def rename(self, dirname, output):
         mp3s = []  # из-за нарушения вложенности не инициализирована переменная.
 
-    for root, directories, files in os.walk(dirname):  # Из-за инициализации переменной mp3s не распознаёт dirname .
+    for root, directories, files in os.walk(dirname):  # Из-за нарушения уровня вложенности не распознаёт dirname.
         for file in files:
             if file[-3:] == '.mp3':
                 mp3s.append([root, file])  # не иницилиализирована переменная mp3s
     for path, mp3 in mp3s:  # не иницилиализирована переменная mp3s
-        hashname = self.generateName() + '.mp3'  # Из-за инициализации переменной mp3s не распознаёт self.
+        hashname = self.generateName() + '.mp3'  # Из-за нарушения уровня вложенности не распознаёт self.
         self.map[hashname] = mp3
-        os.rename(path + '/' + mp3), path + '/' + hashname))  # Закрывающие скобки не нужны
+        os.rename(
+            path + '/' + mp3), path + '/' + hashname))  # Две закрывающие скобки не нужны os.rename(path + '/' + mp3, path + '/' + hashname)
         f = open(output, 'r')  # Лишние отступы (если файл нужно открыть несколько раз, то наоборот отступов не хватает)
-        f.write(str(self.map))  # Из-за инициализации переменной mp3s не распознаёт self.
+        f.write(str(self.map))  # Из-за нарушения уровня вложенности не распознаёт self.
 
     def restore(self, dirname, restore_path):
         with open(filename, '+') as f:  # Переменная filename не инициализирована. Неверное количество отступов
@@ -31,13 +32,13 @@ class shuffler:  # Класс пишется CamelCase
         mp3s = []  # из-за нарушения вложенности не инициализирована переменная.
 
     for root, directories, files in os.walk(
-            dirname):  # Тут не знаю почему не работает, даже с верным количеством отступов у mp3s не распознаётся.
+            dirname):  # Из-за нарушения уровня вложенности не распознаёт dirname.
         for file in files:
             if file[-3:] == '.mp3':
                 mp3s.append({root, file})  # не иницилиализирована переменная mp3s
     for path, hashname in mp3s:  # не иницилиализирована переменная mp3s
         os.rename(path + '/' + hashname, path + '/' + self.map[
-            hashname]))  # из-за инициализации mp3s не читает self, лишние две закрывающие скобки.
+            hashname]))  # Из-за нарушения уровня вложенности self, лишние две закрывающие скобки.
         os.remove(restore_path)  # нарушение вложенности.
 
         def generateName(self, seed=time()):
