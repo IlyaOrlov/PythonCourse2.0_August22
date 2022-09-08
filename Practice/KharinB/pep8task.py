@@ -38,7 +38,7 @@ class shuffler:  # Класс пишется CamelCase
                 mp3s.append({root, file})  # не иницилиализирована переменная mp3s
     for path, hashname in mp3s:  # не иницилиализирована переменная mp3s
         os.rename(path + '/' + hashname, path + '/' + self.map[
-            hashname]))  # Из-за нарушения уровня вложенности self, лишние две закрывающие скобки.
+            hashname]))  # Из-за нарушения уровня вложенности self, лишняя одна закрывающая скобка.
         os.remove(restore_path)  # нарушение вложенности.
 
         def generateName(self, seed=time()):
