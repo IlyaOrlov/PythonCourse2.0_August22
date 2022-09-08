@@ -11,9 +11,16 @@
 #
 # import math
 import math
-radius = input("Введите радиус: ")
+
+
 def square(r):
+    """Принимает значение радиуса, возвращает вычисленную площадь круга
+    с данным радиусом
+    """
     return math.pi * r ** 2
+
+
+radius = input("Введите радиус: ")
 result = square(int(radius))
 print(f"Площадь круга: {result}")
 

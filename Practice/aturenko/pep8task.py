@@ -21,7 +21,7 @@ class shuffler: # The name of the class must begin with a capital letter : class
                                        # does not correspond to pep8
         for root, directories, files in os.walk(dirname):
             for file in files:
-                if file[-3:] == '.mp3': # You must use ".startswith()": if file.startswith('.mp3'):
+                if file[-3:] == '.mp3': # Should better use ".endswith()": if file.endswith('.mp3'):
                     mp3s.append([root, file])
         for path, mp3 in mp3s:
             hashname = self.generateName() + '.mp3'
@@ -36,9 +36,8 @@ class shuffler: # The name of the class must begin with a capital letter : class
           mp3s = []
         for root, directories, files in os.walk(dirname): # Incorrect number of spaces, should be 8
             for file in files:
-               if file[-3:] == '.mp3': # You must use ".startswith()": if file.startswith('.mp3'):
-                    mp3s.append({root, file}) # Probably there should be no curly brackets here,
-                                              # because this is not a dictionary
+               if file[-3:] == '.mp3': # Should better use ".endswith()": if file.endswith('.mp3'):
+                    mp3s.append({root, file})
         for path, hashname in mp3s:
             os.rename(path + '/' + hashname, path + '/' + self.map[hashname])) # The path should be
                                                                                # words of small letters with underscores
