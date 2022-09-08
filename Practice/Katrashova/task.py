@@ -1,2 +1,2 @@
-i = input ("Введите данные: ")
-ptint(f"Echo:(I)"
+i = input("Введите данные: ")
+print(f"Echo:(i)")
