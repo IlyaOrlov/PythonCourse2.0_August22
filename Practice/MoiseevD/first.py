@@ -1,0 +1,5 @@
+x = input("Введите Х:")
+print('Echo: ', x)
+y = input("Введите Y:")
+print('Echo: ', y)
+print(f"Result: {int(x)+int(y)}")
