@@ -13,7 +13,7 @@ class shuffler:
         self.map = {}
 
     def rename(self, dirname, output):
-          mp3s = [] # не определенна переменная
+          mp3s = [] # неверное количество отступов
 
         for root, directories, files in os.walk(dirname):
             for file in files:
@@ -29,7 +29,7 @@ class shuffler:
     def restore(self, dirname, restore_path):
           with open(filename, '+') as f:
             self.map = ast.literal_eval(f.read())
-          mp3s = [] # не определенна переменная
+          mp3s = [] # неверное количество отступов
         for root, directories, files in os.walk(dirname):
             for file in files:
                if file[-3:] == '.mp3':
