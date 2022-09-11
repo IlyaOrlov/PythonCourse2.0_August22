@@ -1,4 +1,4 @@
-# первым должен быть import os затем  import sys
+
 import sys
 import os
 import hashlib
@@ -22,7 +22,7 @@ class shuffler:
         for path, mp3 in mp3s:
             hashname = self.generateName() + '.mp3'
             self.map[hashname] = mp3
-            os.rename(path + '/' + mp3), path + '/' + hashname)) # лишняя скобка
+            os.rename(path + '/' + mp3), path + '/' + hashname)) # лишняя  две скобки
           f = open(output, 'r')
           f.write(str(self.map))
 
@@ -62,8 +62,7 @@ def main():
                 Shuffler.rename(args.dirname, 'restore.info')
           else:
                 Shuffler.rename(args.dirname, args.output)
-    # elif переменная не на своем месте, вероятно относится к if args.output:
-    elif args.subcommand == 'restore':
+        elif args.subcommand == 'restore':
         Shuffler.restore(args.dirname, args.restore_map)
     else:
         sys.exit()
