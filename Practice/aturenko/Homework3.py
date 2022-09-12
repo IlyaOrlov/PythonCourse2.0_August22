@@ -2,7 +2,7 @@
 
 a = float(input("Enter the length of the rectangle: "))
 b = float(input("Enter the width of the rectangle: "))
-res = 2 * a + 2 * b
+res = 2 * (a + b)
 print(f"The perimeter of the rectangle is {res}")
 
 # 2.Написать программу для расчёта средней скорости автомобиля по введённым значениям времени и расстояния,
@@ -26,11 +26,11 @@ print(decoding)        # Выводит расшифрованный парол�
 
 # 4.Написать программу, заменяющую все буквы “А” в слове, введённом пользователем, на символ “*”.
 
-word = str(input("Enter one word: "))
+word = input("Enter one word: ")
 
-if "a" in word:
+if "a" or "A" in word:
     word2 = word.replace("a","*")
-if "A" in word:
+if "a" or "A" in word:
     word3 = word2.replace("A", "*")
 else:
     print("There is no letter 'A' in this word")
@@ -40,12 +40,10 @@ print(word3)
 # 5. Написать программу, проверяющую, что слово, введённое пользователем,
 # является палиндромом (примеры: “Топот”, “Довод”). Программа должна выводить True или False
 
-pal = str(input("Enter one word: "))
+pal = input("Enter one word: ")
+pal1 = pal.lower()
 
-if pal[0:] == pal[::-1]:
-    print(True)
-else:
-    print(False)
+print(pal1 == pal1[::-1])
 
 
 
