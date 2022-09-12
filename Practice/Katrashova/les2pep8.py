@@ -13,12 +13,11 @@ class shuffler:  # Имена классов с большой буквы
 
     def rename(self, dirname, output):
         mp3s = []
-
     for root, directories, files in os.walk(dirname):
         for file in files:
             if file[-3:] == '.mp3':
                 mp3s.append([root, file])
-    for path, mp3 in mp3s:
+    for path, mp3 in mp3s:  # поставила 4 пробела
         hashname = self.generateName() + '.mp3'
         self.map[hashname] = mp3
 # Две закрывающие скобки, нет открывающей
@@ -29,13 +28,13 @@ class shuffler:  # Имена классов с большой буквы
     def restore(self, dirname, restore_path):
         with open(filename, '+') as f:  #
             self.map = ast.literal_eval(f.read())
-        mp3s = []  # 4 пробела
+        mp3s = []
 
-    for root, directories, files in os.walk(dirname):
+        for root, directories, files in os.walk(dirname):
         for file in files:
             if file[-3:] == '.mp3':
                 mp3s.append({root, file})
-    for path, hashname in mp3s:
+        for path, hashname in mp3s:
         os.rename(path + '/' + hashname, path + '/' + self.map[hashname]))  # Лишняя скобка
         os.remove(restore_path)
 
