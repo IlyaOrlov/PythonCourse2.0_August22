@@ -1,5 +1,6 @@
 #используем функцию дляпроверки строки на палиндром
 def is_palindrom(slovo):
+    slovo = slovo.upper()
     perevernutoe_slovo = slovo[::-1] #производим операцию со строками по перевороту слова
     return slovo == perevernutoe_slovo #булевая операция сравнения изначального с перевернутым
 
