@@ -17,7 +17,7 @@ class shuffler:  # Имена классов с большой буквы
         for file in files:
             if file[-3:] == '.mp3':
                 mp3s.append([root, file])
-    for path, mp3 in mp3s:  # поставила 4 пробела
+    for path, mp3 in mp3s:
         hashname = self.generateName() + '.mp3'
         self.map[hashname] = mp3
 # Две закрывающие скобки, нет открывающей
