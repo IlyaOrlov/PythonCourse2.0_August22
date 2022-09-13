@@ -2,12 +2,11 @@ a = int(input("Введите а: "))
 b = int(input("Введите b: "))
 
 def fun(a, b):
-    last = 0
     if a > b:
-        last = a
-        print(f"Наибольшее a: {last}")
+        print(f"Наибольшее a: {a}")
+        return a
     elif b > a:
-        last = b
-        print(f"Наибольшее b: {last}")
+        print(f"Наибольшее b: {b}")
+        return b
 
 fun(a,b)
