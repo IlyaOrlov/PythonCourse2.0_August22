@@ -5,5 +5,4 @@ while True:
     if question == "хватит":
         break
     print(x[current_index])
-    current_index += 1
-    current_index = current_index % len(x)
+    current_index = (current_index + 1) % len(x)

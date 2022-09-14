@@ -1,7 +1,7 @@
 import random
 
 
-def who_is_winner(first_man, second_man, type_of_hand):
+def who_is_winner(first_man, second_man):
 
     def winner():
         print("\nВы победили!\n")
@@ -38,4 +38,4 @@ while True:
         who_is_winner(my_hand, computer_hand, rps)
     else:
         print("До новых встреч!")
-        exit()
+        break
