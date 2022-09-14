@@ -4,15 +4,12 @@ count = 0
 while True:
     n = input("Ваш запрос: ")
     count += 1
-    if n == "хватит":
-        break
-    elif count == 2:
-        print(lis[1])
-        continue
-    elif count == 3:
+    if count > len(lis):
         count = 0
-        print(lis[2])
-        continue
+    elif n == "хватит":
+        break
     else:
-        print(lis[0])
+        print(lis[count - 1])
+
+
 

@@ -8,5 +8,8 @@ def fun(a, b):
     elif b > a:
         print(f"Наибольшее b: {b}")
         return b
+    else:
+        print(f"Числа равны")
+        return None
 
 fun(a,b)

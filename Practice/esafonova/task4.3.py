@@ -3,11 +3,10 @@ number = ""
 
 while True:
     n = input("Введите число: ")
-    if n == "stop" or n == "Stop" or n == "STOP":
+    if n.lower() == "stop":
         break
     if not n.isdecimal():
         print("Вы ввели не число. Повторите ввод!")
-        continue
     else:
         number += str(n)
 

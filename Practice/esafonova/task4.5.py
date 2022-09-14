@@ -13,10 +13,12 @@ while True:
         print("Введи правильное число")
         continue
 
-    if int(answer) == number:
+    answer = int(answer)
+
+    if answer == number:
         print('Верно!')
         break
-    elif int(answer) > number:
+    elif answer > number:
         print('Загаданное число меньше')
     else:
         print('Загаданное число больше')
