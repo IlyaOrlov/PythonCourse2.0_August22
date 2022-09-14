@@ -5,11 +5,11 @@ while True:
     n = input("Ваш запрос: ")
     count += 1
     if count > len(lis):
-        count = 0
+        count = 1
     elif n == "хватит":
         break
-    else:
-        print(lis[count - 1])
+    print(lis[count - 1])
+
 
 
 
