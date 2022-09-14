@@ -35,7 +35,7 @@ while True:
         my_hand = int(input())
         computer_hand = random.randint(0, len(rps)-1)
         print(f"\n\nВаш выбор - {rps[my_hand]}, \nВыбор компьютера - {rps[computer_hand]}")
-        who_is_winner(my_hand, computer_hand, rps)
+        who_is_winner(my_hand, computer_hand)
     else:
         print("До новых встреч!")
         break
