@@ -4,7 +4,6 @@ res = p ^ k
 print(res)
 
 
-code = 29859
-k = 666
+code = res
 res = code ^ k
 print(res)
