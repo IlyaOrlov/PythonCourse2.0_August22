@@ -1,0 +1,12 @@
+def draw_line(x1, y1, x2, y2):
+	a = y1 - y2
+	b = x2 - x1
+	c = x1 * y2 - x2 * y1
+	x = x1
+	while x < x2:
+	     y = (-c - a * x)/b
+         draw_pixel(x, y)
+         x = x + 1
+    
+draw_line(20, 10, 35, 10)
+draw_line(35, 10, 35, 20)
