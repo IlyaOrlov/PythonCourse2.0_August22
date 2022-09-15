@@ -5,7 +5,6 @@ while True:
         break
     elif not i.isdecimal():
         print("Вы ввели не число!")
-        continue
     else:
         w += str(i)
 print(f"Вы ввели число: {w}")

@@ -10,9 +10,10 @@ while True:
     if not c.isdecimal():
         print("Вы ввели не число!")
         break
-    elif int(c) > number:
+    c = int(c)
+    if c > number:
         print("Нет, число меньше загаданного")
-    elif int(c) < number:
+    elif c < number:
         print("Нет, число больше загаданного")
     else:
         print("Угадал!")
