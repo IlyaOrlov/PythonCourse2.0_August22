@@ -14,6 +14,6 @@ def finds_max(a, b):
     return max_2
 
 
-a, b=map(int, input("Введите два числа: ").split())
+a, b = map(int, input("Введите два числа: ").split())
 choose_max(a, b)
 finds_max(a, b)
