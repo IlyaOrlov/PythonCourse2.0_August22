@@ -21,13 +21,3 @@ for i in range(len(arr)-1):  # O(n)
         arr_second.append(arr[i+1][0])
         value_to_ignore = arr[i][1]
 print(old_arr[min(arr_second)])
-
-
-
-
-
-
-
-
-#2, 3, 4, 5, 3, 2
-#2  2  3  3  4  5
