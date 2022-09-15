@@ -3,7 +3,6 @@ import random
 
 actions = ("камень", "ножницы", "бумага")
 gamer_action = " "
-computer_action = random.choice(actions)
 while True:
     gamer_action = input("Сделайте выбор (камень, ножницы или бумага): ")
     computer_action = random.choice(actions)
