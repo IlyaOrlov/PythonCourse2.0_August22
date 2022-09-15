@@ -2,6 +2,16 @@ import random
 
 print('Привет! Давай сыграем в: "Камень", "Ножницы", "Бумага"? ')
 
+
+def fun(x):
+    c = c.lower()
+    if c == 'y':
+        return continue
+    else:
+        print('Как скажете.')
+        return break
+
+
 while True:
     a = int(input('Сделайте ваш выбор: 1 - Камень 2 - Ножницы 3 - Бумага: '))
     b = random.randrange(1, 4)
@@ -24,27 +34,12 @@ while True:
     if a == b:
         print('Ничья.')
         c = input('Сыграете еще? y/n: ')
-        c = c.lower()
-        if c == 'y':
-            continue
-        else:
-            print('Как скажете.')
-            break
+        fun(c)
     elif (a == 1 and b == 2) or (a == 2 and b == 3) or (a == 3 and b == 1):
         print('Поздравляю! Вы победили!')
         c = input('Сыграете еще? y/n: ')
-        c = c.lower()
-        if c == 'y':
-            continue
-        else:
-            print('Как скажете.')
-            break
+        fun(c)
     else:
         print('Сожалею. Вы проирали.')
         c = input('Сыграете еще? y/n: ')
-        c = c.lower()
-        if c == 'y':
-            continue
-        else:
-            print('Как скажете.')
-            break
+        fun(c)
