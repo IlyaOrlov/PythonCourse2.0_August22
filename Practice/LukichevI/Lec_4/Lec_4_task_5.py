@@ -9,8 +9,7 @@ while True:
     if not b.isdecimal():
         print('Вы ввели не число')
         continue
-    if a.isdecimal() and b.isdecimal():
-        break
+    break
 a = int(a)
 b = int(b)
 c = random.randint(a, b)
