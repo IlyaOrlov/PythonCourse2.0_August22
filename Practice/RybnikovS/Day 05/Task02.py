@@ -2,12 +2,12 @@ old_arr = [2, 3, 4, 5, 3, 2]
 
 #Время выполнения O(n**2)
 # min_index = len(arr)
-# for i in range(len(arr)):
-#     for j in range(i+1, len(arr)):
+# for i in range(len(arr)):  # O(n)
+#     for j in range(i+1, len(arr)):  # O(n) => O(n**2)
 #         if arr[i] == arr[j] and j < min_index:
 #             min_index = j
 #             break
-# print(arr[min_index]) O(n**2)
+# print(arr[min_index])
 
 #Время выполнения O(n*log(n)) - лучшее
 arr_second = []
