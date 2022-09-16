@@ -1,4 +1,12 @@
-list = [1,0,8,1,9]
+num = "10819"
+if num.isdecimal():
+    print(f"Число {num}")
 
-for i in list:
-        print(i)
+for n in num:
+    print(n)
+
+
+
+
+
+
