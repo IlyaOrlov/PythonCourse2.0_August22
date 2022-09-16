@@ -2,7 +2,6 @@ import random
 
 
 actions = ("камень", "ножницы", "бумага")
-gamer_action = " "
 while True:
     gamer_action = input("Сделайте выбор (камень, ножницы или бумага): ")
     computer_action = random.choice(actions)
@@ -24,3 +23,6 @@ while True:
             print("Ножницы режут бумагу. Вы проиграли...")
         else:
             print("Бумага оборачивает камень. Вы победили!")
+    elif gamer_action == "Стоп":
+        print(f"Сыграем в другой раз")
+        break
