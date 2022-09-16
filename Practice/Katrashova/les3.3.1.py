@@ -1,4 +1,4 @@
 cvv = int(input("Введите пароль: "))
-key = int(input("Введите ключ: "))
+key = 123
 res = cvv ^ key
 print(res)
