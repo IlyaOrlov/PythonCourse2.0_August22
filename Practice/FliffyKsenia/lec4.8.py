@@ -1,17 +1,17 @@
-#импортируем(подключаем) функцию random для возможности её использования
+#импортируем(подключаем) функцию random для возможности её использования:
 import random
-# задаем компьютеру список слов для выбора
+# задаем компьютеру список слов для выбора:
 game_slovs = ['камень', 'ножницы', 'бумага']
 # запрашиваем у пользователя камень, ножницы, бумага
 while True:
     igrok = input("Введите камень, ножницы, бумага: ").lower()
     if igrok in game_slovs:
         break
-# вызываем функцию рандом
+# вызываем функцию рандом:
 vybor_kompyter = random.randint(0,2)
 vybor_igroka = game_slovs.index(igrok.lower())
 result_of_game = vybor_kompyter - vybor_igroka
-# выводим на печать выбор компьютера
+# выводим на печать выбор компьютера:
 print("Выбор компьютера -", game_slovs[vybor_kompyter] )
 #print(game_slovs.index(igrok.lower()))
 #print("result of game",result_of_game)
