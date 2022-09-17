@@ -1,20 +1,21 @@
-list = []
-while True:
-    number = int(input("Input a number: "))
-    list.append(number)
-    if number == "stop":
-        break
+a = ""
 
-print("list all elements",list)
 
-even_list = []
-odd_list = []
 
-for i in number:
-    if i % 2 == 0:
-        even_list.append(i)
-    else:
-        odd_list.append(i)
 
-print("Even list:",even_list)
-print("Even list:",odd_list)
+while not (a := input("Введите число: ")).isdecimal():
+   if a == "stop":
+       break
+else:
+   print("Введено не число!")
+print("Завершено")
+
+
+#num =""
+#while (num1 := input("Enter a numeric character: ")).lower() != "stop":
+#   if num1.isdecimal():
+#       num += num1
+ #   else:
+#      print("You enter not numeric character")
+#else:
+#   print(f"Generated number: {int(num)}")
