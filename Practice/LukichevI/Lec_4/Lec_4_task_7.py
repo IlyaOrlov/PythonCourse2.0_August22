@@ -19,15 +19,14 @@ def fun_return():
         print('Как скажете.')
         return False
 
-
+@dec
 def fun_input():
     print(a)
 
 
 while True:
     a = input('Введите число: ')
-    e = dec(fun_input)
-    e()
+    fun_input()
     if fun_return():
         continue
     else:
