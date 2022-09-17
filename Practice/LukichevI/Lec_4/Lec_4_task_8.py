@@ -1,12 +1,13 @@
 import random
 
-def fun(x):
+
+def fun(c):
     c = c.lower()
     if c == 'y':
-        return continue
+        return True
     else:
         print('Как скажете.')
-        return break
+        return False
 
 
 print('Привет! Давай сыграем в: "Камень", "Ножницы", "Бумага"? ')
@@ -14,7 +15,6 @@ print('Привет! Давай сыграем в: "Камень", "Ножниц
 while True:
     a = int(input('Сделайте ваш выбор: 1 - Камень 2 - Ножницы 3 - Бумага: '))
     b = random.randrange(1, 4)
-    print(b)
 
     if a == 1:
         print('Вы выбрали Камень')
@@ -33,12 +33,21 @@ while True:
     if a == b:
         print('Ничья.')
         c = input('Сыграете еще? y/n: ')
-        fun(c)
+        if fun(c):
+            continue
+        else:
+            break
     elif (a == 1 and b == 2) or (a == 2 and b == 3) or (a == 3 and b == 1):
         print('Поздравляю! Вы победили!')
         c = input('Сыграете еще? y/n: ')
-        fun(c)
+        if fun(c):
+            continue
+        else:
+            break
     else:
-        print('Сожалею. Вы проирали.')
+        print('Сожалею. Вы проиграли.')
         c = input('Сыграете еще? y/n: ')
-        fun(c)
+        if fun(c):
+            continue
+        else:
+            break
