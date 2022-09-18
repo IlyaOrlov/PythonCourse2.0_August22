@@ -1,11 +1,18 @@
-def dec(fun):
-
-
-    def dec_in():
+def dec_0(fun):
+    def dec_in(*args, **kwargs):
         b = '==========='
         c = '==========='
         print(b)
-        fun()
+        fun(*args, **kwargs)
+        print(c)
+    return dec_in
+
+def dec_1(fun):
+    def dec_in(*args, **kwargs):
+        b = '+++++++++++'
+        c = '+++++++++++'
+        print(b)
+        fun(*args, **kwargs)
         print(c)
     return dec_in
 
@@ -18,14 +25,14 @@ def fun_return():
     else:
         print('Как скажете.')
         return False
-
-@dec
-def fun_input():
-    print(a)
+@dec_0
+@dec_1
+def fun_input(*args, **kwargs):
+    print(a, x, y)
 
 
 while True:
-    a = input('Введите число: ')
+    a, x, y = input('Введите число: '), input('Введите число: '), input('Введите число: '),
     fun_input()
     if fun_return():
         continue
