@@ -27,15 +27,14 @@ def fun_return():
         return False
 @dec_0
 @dec_1
-def fun_input(*args, **kwargs):
-    print(a, x, y)
+def fun_input(*args):
+    print(*args)
 
 
 while True:
-    a, x, y = input('Введите число: '), input('Введите число: '), input('Введите число: '),
-    fun_input()
+    a, x, y = input('Введите число: '), input('Введите число: '), input('Введите число: ')
+    fun_input(a, x, y)
     if fun_return():
         continue
     else:
         break
-
