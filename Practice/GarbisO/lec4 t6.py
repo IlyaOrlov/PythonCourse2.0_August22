@@ -6,6 +6,7 @@ def find_max(a, b):
         return b
     else:
         print("Числа равны")
+        return None
 
 
 x = int(input("Введите число a: "))
