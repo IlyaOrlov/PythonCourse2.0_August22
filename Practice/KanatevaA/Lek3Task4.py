@@ -1,15 +1,6 @@
-slovo = input("напишите слово")
-x = len(slovo)
-i = 0
-x = x - 1
-k = 0
-while x - i >= i:
-    if slovo[x - i] == slovo[i]:
-        i += 1
-    else:
-        k = 1
-        break
-if k == 1:
-  print("True")
+s = input("напишите слово:")
+if s == s[::-1]:
+    print("слово полиндром")
 else:
-  print("False")
+    print("слово не является полиндромом")
+
