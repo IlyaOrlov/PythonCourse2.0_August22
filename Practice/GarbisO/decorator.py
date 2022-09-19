@@ -11,23 +11,15 @@ def decorator(myfun):
 
 def mysum(a, b, c, d):
     return a+b+c+d
+
+
 mysum=decorator(mysum)
 print(mysum(300, 700, 900, 1300))
 
 #вариант №2
-def decorator(myfun):
-    def wrapper(*args, **kwargs):
-        print("==============")
-        res = myfun(*args, **kwargs)
-        print("==============")
-        return res
-
-    return wrapper
-
-
 @decorator
-def mysum(a, b, c, d):
-    return a+b+c+d
+def mymul(a, b, c, d):
+    return a*b*c*d
 
 
-print(mysum(300, 700, 900, 1300))
+print(mymul(300, 700, 900, 1300))
