@@ -1,14 +1,16 @@
 def decorator1(func):
     def equality(*args, **kwargs):
         print("===========")
-        func(*args, **kwargs)
+        res = func(*args, **kwargs)
         print("===========")
-        return func
-    return equality()
+        return res
+    return equality
 
 
-def func1():
+@decorator1
+def func():
     print("Привет")
 
+func()
 
-decorator1(func1)
+
