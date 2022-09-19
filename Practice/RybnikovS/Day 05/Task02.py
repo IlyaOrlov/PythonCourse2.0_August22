@@ -37,10 +37,10 @@ old_arr = [2, 3, 4, 5, 3, 2]
 #Время выполнения O(n) через set - лучше лучшего!
 
 print(old_arr)
-dict = set()
+my_set = set()
 for i in range(len(old_arr)):  # O(n)
-    if old_arr[i] in dict:   # O(1)
+    if old_arr[i] in my_set:   # O(1)
         print(f"Первый повторившийся элемент {old_arr[i]}")   # O(1)
         break
     else:
-        dict.add(old_arr[i])  # O(1)
+        my_set.add(old_arr[i])  # O(1)
