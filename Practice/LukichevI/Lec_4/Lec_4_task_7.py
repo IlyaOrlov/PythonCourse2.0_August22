@@ -5,6 +5,7 @@ def dec_0(fun):
         print(b)
         fun(*args, **kwargs)
         print(c)
+        return fun
     return dec_in
 
 def dec_1(fun):
@@ -14,6 +15,7 @@ def dec_1(fun):
         print(b)
         fun(*args, **kwargs)
         print(c)
+        return fun
     return dec_in
 
 
