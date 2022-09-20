@@ -1,7 +1,7 @@
 def repeat(lst):
     lst_new = []
     for i in lst:
-        if not i in lst_new:
+        if not i in set(lst_new):
             lst_new.append(i)
         else:
             print(i)
