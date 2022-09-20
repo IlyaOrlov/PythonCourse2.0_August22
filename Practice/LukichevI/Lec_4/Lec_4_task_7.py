@@ -3,9 +3,9 @@ def dec_0(fun):
         b = '==========='
         c = '==========='
         print(b)
-        fun(*args, **kwargs)
+        res = fun(*args, **kwargs)
         print(c)
-        return fun
+        return res
     return dec_in
 
 def dec_1(fun):
@@ -13,9 +13,9 @@ def dec_1(fun):
         b = '+++++++++++'
         c = '+++++++++++'
         print(b)
-        fun(*args, **kwargs)
+        res = fun(*args, **kwargs)    # fun(*args, **kwargs)
         print(c)
-        return fun
+        return res    # а эту строку удалить
     return dec_in
 
 
