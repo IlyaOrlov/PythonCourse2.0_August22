@@ -1,10 +1,10 @@
 def my_dec(fun):
     def inner_fun(*args, **kwargs):
         print("===========")
-        print(fun(*args, **kwargs))
+        res = fun(*args, **kwargs)
+        print(res)
         print("===========")
-        return None
-
+        return res
     return inner_fun
 
 
