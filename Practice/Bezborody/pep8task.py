@@ -3,7 +3,7 @@ import os
 import hashlib
 import ast
 import argparse
-from time import * # звездочка не указывает, вроде бы, на то, что импортируется
+from time import * # такой import не рекомендуется PEP8
 
 
 class shuffler: # нарушено правило CamelCase
