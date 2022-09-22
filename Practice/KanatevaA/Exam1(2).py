@@ -17,8 +17,12 @@ print(myfun("kdkfkbkjbkjbf"))
 #    print(i)
 
 
+#def myfun(a):
+#    for i in a[::-1]:
+#        return i
+#        print(myfun(fjflg))
 def myfun(a):
     for i in a[::-1]:
-        return i
+        return a           #исправила return что-бы фраза выводилась певернутая целиком
 print(myfun("fjflg"))
 
