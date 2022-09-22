@@ -26,3 +26,13 @@ def myfun(a):
         return a           #исправила return что-бы фраза выводилась певернутая целиком
 print(myfun("fjflg"))
 
+#Написать функцию count_symbol: считает сколько раз символ встречается в строке.
+# Строковый метод count использовать нельзя! (3 балла)
+
+def myfun(a):
+    s = 0
+    for s in a if s == a
+        s +=1
+        return s
+    print(myfun("kjbkjb"))
+
