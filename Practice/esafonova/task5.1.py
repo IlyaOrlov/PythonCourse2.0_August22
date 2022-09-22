@@ -8,6 +8,6 @@ def sort(arr):
             arr[m], arr[i] = arr[i], arr[m]
     return arr
 
-arr = [6,3,24,26,3,7]
+arr = [6, 3, 24, 26, 3, 7]
 res = sort(arr)
 print(res)
