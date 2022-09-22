@@ -21,7 +21,7 @@ while True:
 
 #вызываем рандом в указанном диапазоне чисел
 vybor_kompyter = random.randint(int(range_min), int(range_max))
-print(vybor_kompyter)
+#print(vybor_kompyter)
 
 # пользователь должен ввести число, в указанном им раннее диапазоне для угадывания выбора компьютером
 ugadai_chislo = " "
@@ -43,9 +43,9 @@ while True:
     if int(ugadai_chislo) <= int(range_min) or int(ugadai_chislo) >= int(range_max):
         print("Вы указали число, находящееся вне заданного ранее вами диапазона")
      # проверка на то, что заданное пользователем число меньше или равно введеного им максимального значения
-    elif int(ugadai_chislo) > vybor_kompyter:
+    elif int(ugadai_chislo) >= vybor_kompyter:
         print("Очень жаль, но вы не угадали. Вы ввели число больше, чем следовало: ")
-    elif int(ugadai_chislo) < vybor_kompyter:
+    elif int(ugadai_chislo) <= vybor_kompyter:
         print("Очень жаль, но вы не угадали. Вы ввели число меньше, чем следовало: ")
 
     else:
