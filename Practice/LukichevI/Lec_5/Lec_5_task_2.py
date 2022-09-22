@@ -1,7 +1,8 @@
 def fun(a, b):
-    for i in range(len(lst1) - 1):
+    for i in range(len(a)):
         if a[i] in b:
-            print(f'Первый повторившийся символ: {lst1[i]} ')
+            print(f'Первый повторившийся символ: {a[i]} ')
+            break
         else:
             b.add(a[i])
 
