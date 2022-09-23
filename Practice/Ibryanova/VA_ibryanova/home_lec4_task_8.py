@@ -1,9 +1,9 @@
 import random
 
 
+c = ('камень', 'ножницы', 'бумага')
 while True:
     y = input('Выберите - камень, ножницы, бумага: ')
-    c = ('камень', 'ножницы', 'бумага')
     comp = random.choice(c)
     print(f'Вы выбрали {y}, а комп выбрал {comp}')
     if y == comp:
