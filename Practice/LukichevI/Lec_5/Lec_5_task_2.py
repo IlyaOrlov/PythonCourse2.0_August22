@@ -1,12 +1,12 @@
-def fun(a, b):
-    for i in range(len(a)):
-        if a[i] in b:
-            print(f'Первый повторившийся символ: {a[i]} ')
+def fun(my_list):
+    new_list = set()
+    for i in range(len(my_list)):
+        if my_list[i] in new_list:
+            print(f'Первый повторившийся символ: {my_list[i]} ')
             break
         else:
-            b.add(a[i])
+            new_list.add(my_list[i])
 
 
-lst1 = [2, 3, 4, 5, 3, 2]
-lst2 = set()
-fun(lst1, lst2)
+lst = [2, 3, 4, 5, 3, 2]
+fun(lst)
