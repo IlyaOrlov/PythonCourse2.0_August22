@@ -1,5 +1,5 @@
 def delete_column(lst, number):
-    for i, d in enumerate(lst):
+    for d in lst:
         for y, v in enumerate(d):
             if number == int(v):
                 for k in range(len(lst)):
