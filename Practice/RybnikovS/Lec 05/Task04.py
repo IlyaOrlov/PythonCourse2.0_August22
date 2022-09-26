@@ -30,14 +30,14 @@ def matrix_delete_column(inner_arr, column):
 def find_column_for_del(inner_arr, inner_elem):
     new_array = []
     for row in range(len(inner_arr)):
-        for column in range(len(inner_arr[row])) :
+        for column in range(len(inner_arr[row])):
             if inner_arr[row][column] == inner_elem:
                 new_array.append(column)
-    return new_array
+    return list(set(new_array))
 
 
 # my_array = matrix_make()
-my_array = [[1, 2, 3],
+my_array = [[1, 2, 2],
             [4, 5, 2],
             [6, 7, 8]]  # матрица для отладки
 
