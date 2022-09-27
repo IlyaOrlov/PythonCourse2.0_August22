@@ -1,10 +1,10 @@
-lst = ['Иван', 'родил', 'дитенка', 'велел', 'тащить', 'пеленки']
+my_string = 'Иван родил дитенка велел тащить пеленки'
+my_string = my_string.split()
 my_dict = {'родил': 'купил', 'дитенка': 'самогонки', 'пеленки': 'закуски'}
-# строка исключительно для последующего сранвнения списков
-print(lst)
-for i in range(len(lst)):
-    word = lst[i]
+for i in range(len(my_string)):
+    word = my_string[i]
     for a in my_dict:
         if a == word:
-            lst[i] = my_dict[a]
-print(lst)
+            my_string[i] = my_dict[a]
+my_string = ' '.join(my_string)
+print(my_string)
