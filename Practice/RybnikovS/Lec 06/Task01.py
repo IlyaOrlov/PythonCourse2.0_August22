@@ -48,7 +48,7 @@ class Tank:
     dict_speed_damage = {"Light" : 1.3, "Medium": 1, "Heavy": 0.8}
     inc_damage = {"Allies": 0.8, "Soviet": 1.15}
     health = 0
-    current_health = 0
+
 
 
 fraction = int(input("Press: 0 - Play as Allies, 1 - Play as Soviet: "))
