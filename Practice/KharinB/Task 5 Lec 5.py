@@ -6,9 +6,9 @@ def tab_space(p, tab_space="t"):
     else:
         text = f.read()
         if tab_space == "s":
-            text = text.replace("    ", " ")
+            text = text.replace("\t", " ")
         elif tab_space == "t":
-            text = text.replace(" ", "    ")
+            text = text.replace(" ", "\t")
         else:
             print("Неверно указан тип изменения")
             return None
