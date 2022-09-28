@@ -28,12 +28,12 @@ def matrix_delete_column(inner_arr, column):
 
 
 def find_column_for_del(inner_arr, inner_elem):
-    new_array = []
+    new_array = set()
     for row in range(len(inner_arr)):
         for column in range(len(inner_arr[row])):
             if inner_arr[row][column] == inner_elem:
-                new_array.append(column)
-    return list(set(new_array))
+                new_array.add(column)
+    return list(new_array)
 
 
 # my_array = matrix_make()
