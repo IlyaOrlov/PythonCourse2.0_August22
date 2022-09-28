@@ -1,4 +1,4 @@
-num = int(input('Введите значение цифры для удаления: '))
+
 def mat(lst, num):
     for i in lst:
         j = 0
@@ -11,7 +11,10 @@ def mat(lst, num):
 
 
 def delete(lst, j):
-    [lst[i].pop(j) for i in range(len(lst))]
+    for i in range(len(lst)):
+        lst[i].pop(j)
+    # [lst[i].pop(j) for i in range(len(lst))]
 
+num = int(input('Введите значение цифры для удаления: '))
 lst = [[1, 2, 3], [4, 5, 6, ], [7, 8, 9]]
 print(mat(lst, num))

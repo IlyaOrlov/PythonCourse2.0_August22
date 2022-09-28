@@ -1,26 +1,26 @@
 # Спроектировать классы (один или несколько) для игры в танки и создать экземпляры этих классов.
 class Tank:
     def __init__(self, name, model, power):
-        self.name = name
-        self.model = model
-        self.power = power
+        self._name = name
+        self._model = model
+        self._power = power
 
     def show(self):
-        print(f'Игрок: {self.name} с танком {self.model} и мощностью {self.power}')
+        print(f'Игрок: {self._name} с танком {self._model} и мощностью {self._power}')
 
     def __lt__(self, other):
-        if self.power > other.power:
-            return f'У Игрока {self.name} больше шансов'
-        elif self.power == other.power:
+        if self._power > other._power:
+            return f'У Игрока {self._name} больше шансов'
+        elif self._power == other._power:
             return 'Шансы равны'
         else:
-            return f'У Игрока {self.name} меньше шансов'
+            return f'У Игрока {self._name} меньше шансов'
 
     def __str__(self):
-        return  f'Игрок: {self.name} с танком {self.model} и мощностью {self.power}'
+        return  f'Игрок: {self._name} с танком {self._model} и мощностью {self._power}'
 
     def __repr__(self):
-        return f'Игрок: {self.name} с танком {self.model} и мощностью {self.power}'
+        return f'Игрок: {self._name} с танком {self._model} и мощностью {self._power}'
 
 
 player1 = Tank('Вася', 'Т-34', 400)
