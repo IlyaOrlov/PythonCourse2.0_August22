@@ -2,6 +2,7 @@
 # На этот раз он будет думать от 3 до 6 секунд (c помощью метода sleep библиотеки time и randint библиотеки random).
 import time
 import random
+
 class Man:
     def __init__(self, name):
         self.name = name
