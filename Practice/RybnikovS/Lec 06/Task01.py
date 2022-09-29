@@ -2,12 +2,19 @@ import random
 
 
 class Tank:
+    all_fractions = ("Allies", "Soviet")
+    all_weights = ("Light", "Medium", "Heavy")
+    dict_health = {"Light": 300, "Medium": 600, "Heavy": 1000}
+    inc_health = {"Allies": 1.2, "Soviet": 0.9}
+    basic_damage = 75
+    dict_speed_damage = {"Light": 1.3, "Medium": 1, "Heavy": 0.8}
+    inc_damage = {"Allies" : 0.8, "Soviet" : 1.15}
+    health = 0
 
     def __init__(self, my_fraction, my_weight):
-        all_fractions = ("Allies", "Soviet")
-        all_weights = ("Light", "Medium", "Heavy")
-        self.fraction = all_fractions[my_fraction]
-        self.weight = all_weights[my_weight]
+
+        self.fraction = self.all_fractions[my_fraction]
+        self.weight = self.all_weights[my_weight]
 
     def __repr__(self):
         return f"You play on {self.weight} tank, with {self.health} HP. You fight for {self.fraction}"
@@ -41,14 +48,6 @@ class Tank:
 
     def current_hp(self, taken_damage):
         self.health -= taken_damage
-
-    dict_health = {"Light": 300, "Medium": 600, "Heavy": 1000}
-    inc_health = {"Allies": 1.2, "Soviet": 0.9}
-    basic_damage = 75
-    dict_speed_damage = {"Light" : 1.3, "Medium": 1, "Heavy": 0.8}
-    inc_damage = {"Allies": 0.8, "Soviet": 1.15}
-    health = 0
-
 
 
 fraction = int(input("Press: 0 - Play as Allies, 1 - Play as Soviet: "))
