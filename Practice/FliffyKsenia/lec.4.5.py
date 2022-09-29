@@ -8,9 +8,9 @@ range_max = " "
 #объявляем цикл на ввод min  и max данных
 while True:
 
-    while not (range_min.isdigit()): # проверка на то, что min значение являеся целым числом
+    while not range_min.isdigit(): # проверка на то, что min значение являеся целым числом
         range_min = input("Введите целое число, являющееся началом диапазона: ")
-    while not (range_max.isdigit()):# проверка на то, что max значение являеся целым числом
+    while not range_max.isdigit():# проверка на то, что max значение являеся целым числом
         range_max = input("Введите целое число, являющееся концом диапазона: ")
     if int(range_min) >= int(range_max): # проверка на то, что min значение меньше max
         print("Вы указали не корректный диапазон: ")
