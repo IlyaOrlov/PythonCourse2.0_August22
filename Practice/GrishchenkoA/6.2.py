@@ -16,7 +16,7 @@ class Duck:
 
 
     def __repr__(self):
-        print(f"Имя утки: {self.name}, вес утки: {self.weight} грамм")
+        return f"Имя утки: {self.name}, вес утки: {self.weight} грамм"
 
 
     def __lt__(self, other):
@@ -24,7 +24,7 @@ class Duck:
 
 
     def __ne__(self, other):
-        return self
+        return self.weight != other.weight
 
 
     def __add__(self, other):
@@ -38,9 +38,9 @@ d2 = Duck("Willy", 900)
 d3 = Duck("Dilly", 800)
 d1.say_Duck()
 Duck.color_duck()
-d1.__repr__()
-d2.__repr__()
-d3.__repr__()
-print(d1.__lt__(d2))
-print(d1.weight.__ne__(d2.weight))
+print(repr(d1))
+print(repr(d2))
+print(repr(d3))
+print(d2 < d3)
+print(d1 != d2)
 print(d1.weight.__add__(d3.weight))

@@ -1,4 +1,4 @@
-class MyTanks():
+class MyTanks:
     "Класс содержит виды танков c характеристиками"
     color = "green"
 
@@ -10,7 +10,7 @@ class MyTanks():
         self.speed = speed
         self.strength = strength
 
-
+    @staticmethod
     def print_res(lst):
         for i in lst:
             print(i.__dict__)
