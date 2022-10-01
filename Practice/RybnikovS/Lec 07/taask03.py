@@ -7,7 +7,6 @@
 
 
 class Atm:
-    _ability = ["Выдача наличных", "Прием наличных"]
 
     def __init__(self, cash):
         self._cash = cash
@@ -28,14 +27,14 @@ class Atm:
                 print(f"Выдано наличных на сумму {abs(delta_cash)} у.е.")
                 self._cash += delta_cash
 
-    def operations(self):
-        for _ in self._ability:
-            print(_, end=" ")
+    def system_info(self):
+        system_list = [method for method in dir(self) if (method.startswith('__')
+                                                          or method.startswith('system')
+                                                          or method.startswith('_')) is False]
+        return system_list
 
 
 class NewAtm(Atm):
-    _ability = Atm._ability.copy()
-    _ability.append("Онлайн оплата")
 
     @staticmethod
     def online_banking(self):
@@ -44,9 +43,8 @@ class NewAtm(Atm):
 
 def atm_status(array):
     for i in range(len(array)) :
-        print(f"\nATM {i}")
-        array[i].operations()
-        print(f"\nНаличных внутри {array[i].cash} у.е.")
+        print(f"\nATM {i} -> Наличных внутри {array[i].cash} у.е.")
+        print(f"Поддерживаемые операции: {array[i].system_info()}")
 
 
 atm_in_city = [Atm(5000), NewAtm(10000), Atm(4500), Atm(6000)]
