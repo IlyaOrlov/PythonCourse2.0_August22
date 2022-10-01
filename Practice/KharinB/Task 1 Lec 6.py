@@ -19,7 +19,8 @@ class Tank:
             self.pos[1] += (self.speed)
         self.Vector = vec  # вне зависимости от того движимся мы или нет, мы поворачиваем башню в заявленную сторону
 
-    def atack(self, atc):
+    @staticmethod
+    def atack(atc):
         if atc == " ":  # Если введён пробел, то атакуем
             atack = True
 
