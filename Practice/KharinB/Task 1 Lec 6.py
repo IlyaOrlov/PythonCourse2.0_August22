@@ -2,8 +2,8 @@ import random
 
 
 class Tank:
-    def __int__(self):
-        self.HP = 10
+    def __init__(self):
+        self.hp = 10
         self.speed = 1
         self.Vector = "w"
         self.pos = (0, 0)
@@ -24,13 +24,14 @@ class Tank:
             atack = True
 
     def dead(self):
-        if self.HP < 1:
+        if self.hp < 1:
             # Удаляем экземпляр
             pass
 
 
 class Enemy(Tank):
-    def __int__(self):
+    def __init__(self):
+        Tank.__init__(self)
         self.pos = random.choice([(-1, 1), (-1, -1), (1, 1), (1, -1)])
 
     def run_gen(self):
