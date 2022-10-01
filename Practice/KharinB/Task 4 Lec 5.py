@@ -5,7 +5,7 @@ def fun(arr, x):
             for j in range(len(i)):
                 if i[j] == x:
                     y.add(j)
-    if not y:
+    if len(y)>0:
         y = list(y)
         y.sort(reverse=True)
         for c in y:
