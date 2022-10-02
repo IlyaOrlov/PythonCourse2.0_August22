@@ -1,5 +1,5 @@
 class Duck:
-    color = ('Серый')
+    color = 'Серый'
 
     def __init__(self, name, weight):
         self.name = name
@@ -7,7 +7,7 @@ class Duck:
 
     @staticmethod
     def crack():
-     print('Кря кря!')
+        print('Кря кря!')
 
     @classmethod
     def duck_color(cls):

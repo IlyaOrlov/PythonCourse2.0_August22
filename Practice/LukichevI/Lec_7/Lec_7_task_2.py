@@ -11,10 +11,10 @@ class Man:
 
 
 class Pupil(Man):
-    @staticmethod
-    def solve_task():
+
+    def solve_task(self):
         time.sleep(random.randint(3, 6))
-        print("I'm not ready yet")
+        super().solve_task() # Удалил статикметод, добавил super() наследование. Лекция 11, 2:16:46
 
 pupil = Pupil('Илья')
 pupil.solve_task()
