@@ -5,19 +5,19 @@ class Tank:
     def __init__(self):
         self.hp = 10
         self.speed = 1
-        self.Vector = "w"
+        self.vector = "w"
         self.pos = (0, 0)
 
     def run(self, vec):
-        if vec == "a" and self.Vector == "a":  # Проверяем направление танка, и если башня повёрнута в сторону заявленного движение, то движимся по соответствующей оси.
+        if vec == "a" and self.vector == "a":  # Проверяем направление танка, и если башня повёрнута в сторону заявленного движение, то движимся по соответствующей оси.
             self.pos[0] += (-self.speed)
-        elif vec == "d" and self.Vector == "d":
+        elif vec == "d" and self.vector == "d":
             self.pos[0] += (self.speed)
-        elif vec == "s" and self.Vector == "s":
+        elif vec == "s" and self.vector == "s":
             self.pos[1] += (self.speed)
-        elif vec == "w" and self.Vector == "w":
+        elif vec == "w" and self.vector == "w":
             self.pos[1] += (self.speed)
-        self.Vector = vec  # вне зависимости от того движимся мы или нет, мы поворачиваем башню в заявленную сторону
+        self.vector = vec  # вне зависимости от того движимся мы или нет, мы поворачиваем башню в заявленную сторону
 
     @staticmethod
     def atack(atc):
@@ -32,7 +32,7 @@ class Tank:
 
 class Enemy(Tank):
     def __init__(self):
-        Tank.__init__(self)
+        super().__init__()
         self.pos = random.choice([(-1, 1), (-1, -1), (1, 1), (1, -1)])
 
     def run_gen(self):

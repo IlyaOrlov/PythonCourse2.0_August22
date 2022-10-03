@@ -14,6 +14,8 @@ class Terminal:
 
     @cash.setter
     def cash(self, value):
+        if not type(self._cash) is int:
+            print("В терминале отсутствует функция пополнения")
         if type(value) is int:
             self._cash += value
         else:
@@ -23,7 +25,7 @@ class Terminal:
 class Banckomat(Terminal):
 
     def __init__(self, name, cash):
-        Terminal.__init__(self, name)
+        super().__init__(self, name)
         self._cash = cash
 
     def replenish(self):
@@ -32,8 +34,8 @@ class Banckomat(Terminal):
             print("Введена некорректная сумма")
         else:
             a = int(a)
-            self._account[0]+=a
-            self._cash+=a
+            self._account[0] += a
+            self._cash += a
 
     def withdrawal(self):
         a = input("Введите необходимую сумму")
@@ -63,14 +65,15 @@ class Acquiring(Terminal):
             if a > self._account[0]:
                 print("На Вашем счету недостаточно средств")
             else:
-                self._account[0]-=a
-                self._cash +=a
-                print(f"С Вашего счёта списано: {a}")
-                print("Ваш чек")
-                print("Благодарим за покупку")
+                self._account[0] -= a
+                self._cash += a
+                print(f"\nС Вашего счёта списано: {a}\n")
+                print("Ваш чек\n")
+                print("Благодарим за покупку\n")
+
     @staticmethod
     def check_acc():
-        print(f"Терминал экваринга не располагает информацией о Вашем счёте. Как Вы вообще умудрились вызвать это сообщение?!")
+        print("Терминал экваринга не располагает информацией о Вашем счёте. Как Вы вообще умудрились вызвать это сообщение?!")
 
 
 b1 = Terminal("Terminal")
@@ -88,7 +91,7 @@ print("==============")
 
 lst = [b1, b2, b3]
 for i in lst:
-    met=[]
+    met = []
     for j in dir(i):
         if j[0] != "_":
             met.append(j)

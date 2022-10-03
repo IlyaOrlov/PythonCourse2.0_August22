@@ -13,7 +13,7 @@ class Pupil(Man):
     def solve_task(self):
         print("wait a bit")
         time.sleep(random.randint(3, 6))
-        print("I'm not ready yet")
+        super().solve_task()
 
 
 man_one = Man("Donny")

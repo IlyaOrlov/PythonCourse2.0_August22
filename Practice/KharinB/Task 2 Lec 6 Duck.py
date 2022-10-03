@@ -27,7 +27,7 @@ class Duck:
         return res
 
     def __ne__(self, other):
-        return self._weight == other._weight
+        return self._weight != other._weight
 
     def __add__(self, other):
         return self._weight + other._weight

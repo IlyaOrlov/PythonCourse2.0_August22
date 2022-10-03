@@ -6,25 +6,23 @@ class WrapStrToFile:
     def __init__(self):
         self._path = tempfile.mktemp()  # здесь инициализируется атрибут filepath, он содержит путь до файла-хранилища
 
+
     @property
     def content(self):
         try:
-            f = open(self._path, "r")
+            with open(self._path, "r") as f:
+                res = f.read()
+                return res
         except:
             return "File doesn't exist"
-        else:
-            res = f.read()
-            f.close()
-            return res
 
         # попытка чтения из файла, в случае успеха возвращаем содержимое
         # в случае неудачи возвращаем 'File doesn't exist'
 
     @content.setter
     def content(self, value):
-        f = open(self._path, "w")
-        f.write(value)
-        f.close()
+        with open(self._path, "w") as f:
+            f.write(value)
         # попытка записи в файл указанного содержимого
 
     @content.deleter
