@@ -11,8 +11,9 @@ class MyIterTxt:
     def __next__(self):
         with open(self._file_path, "r") as f:
             f.seek(self._ind)
-            res = f.read(1)
-            if res != "":
+            s = f.read(1)
+            res = ""
+            if s != "":
                 while True:
                     s = f.read(1)
                     if s != self._sim and s != "":
