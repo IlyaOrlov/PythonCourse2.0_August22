@@ -5,7 +5,7 @@
 def search(ls, a):
     ind = set()
     for i in range(len(ls)):
-        for m in range(len(ls)):
+        for m in range((len(ls[i]))):
             if a == ls[i][m]:
                 ind.add(m)
     ind = list(ind)
@@ -25,9 +25,10 @@ lst = [
     [2, 2, 1, 3, 3, 5, 6]
 ]
 
-res = search(lst, 4)
+d = int(input("Ведите цифру для удаления стобцов( от 1 до 7): "))
+res = search(lst, d)
 res2 = delete(lst, res)
-print(res2)
+print(f"Удалил: {res2}")
 
 
 

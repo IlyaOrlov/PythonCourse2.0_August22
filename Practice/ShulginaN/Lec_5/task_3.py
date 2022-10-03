@@ -2,8 +2,6 @@ s = "Вот здесь лежит больной студент;\nЕго суд�
 d = {"лежит": "lies", "студент;": "student;", "Болезнь": "Disease", "судьба": "fate"}
 
 print(f"До:\n{s}")
-for i in d:
-    s = s.replace(str(i), str(d[i]))
+for i, value in d.items():
+    s = s.replace(i, value)
 print(f"После:\n{s}")
-
-
