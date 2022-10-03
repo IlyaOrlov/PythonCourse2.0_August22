@@ -1,13 +1,14 @@
+#присвоено новое имя переменной min
+#смысл Res объяснить не могу, убрала из вызова функции
 def fun(lst):
     for i in range(len(lst)):
-        min = i
+        minimal = i
         for x in range(i + 1, len(lst)):
-            if lst[x] < lst[min]:
-                min = x
-        if i != min:
-            lst[i], lst[min] = lst[min], lst[i]
+            if lst[x] < lst[minimal]:
+                minimal = x
+        if i != minimal:
+            lst[i], lst[minimal] = lst[minimal], lst[i]
 
 
 arr = [0, 3, 24, 2, 3, 7]
-res = fun(arr)
 print(f"Отсортированный список: {arr}")
