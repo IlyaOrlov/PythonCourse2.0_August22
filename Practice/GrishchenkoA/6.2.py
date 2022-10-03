@@ -28,7 +28,7 @@ class Duck:
 
 
     def __add__(self, other):
-        return self + other
+        return self.weight + other.weight
 
 
 
@@ -43,4 +43,4 @@ print(repr(d2))
 print(repr(d3))
 print(d2 < d3)
 print(d1 != d2)
-print(d1.weight.__add__(d3.weight))
+print(f"Вес двух уток равен {d1 + d3} грамм")
