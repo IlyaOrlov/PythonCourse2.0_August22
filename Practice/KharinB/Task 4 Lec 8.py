@@ -17,7 +17,7 @@ print(filtr(['hello', 'i', 'write', 'cool', 'code']))
 print(comb("password"))
 print("==============")
 
-
+#Моя реализация.
 def my_sum_lst(*args):
     args = list(args)
     while len(args)>1:
@@ -48,6 +48,10 @@ def my_comb(s):
                     res.append((a, b, c, s4[p]))
     return res
 
+
+
+
 print(my_sum_lst([1, 2, 3], [4, 5], [6, 7]))
 print(my_filtr(['hello', 'i', 'write', 'cool', 'code']))
 print(my_comb("password"))
+print(comb("password") == my_comb("password"))
