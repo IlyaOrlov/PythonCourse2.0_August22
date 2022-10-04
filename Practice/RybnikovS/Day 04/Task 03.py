@@ -1,4 +1,4 @@
-s = ""
+ s = ""
 while True:
     x = input("Введите символ: ")
     if x.upper() == "STOP":
