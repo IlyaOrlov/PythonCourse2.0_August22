@@ -18,9 +18,9 @@ class Duck:
 
     def __lt__(self, other):
         if self.weight < other.weight:
-            print(f"Вес {other.name} - большей утки: {other.weight}")
+            return f"Вес {other.name} - большей утки: {other.weight}"
         else:
-            print(f"Вес {self.name} - большей утки: {self.weight}")
+            return f"Вес {self.name} - большей утки: {self.weight}"
 
     def __ne__(self, other):
         return self.weight != other.weight
@@ -29,15 +29,15 @@ class Duck:
         print(f"Общий вес уток: {self.weight + other.weight}")
         return None
 
-Duck1 = Duck("Луи", 1)
-Duck2 = Duck("Дьюи", 2)
-Duck3 = Duck("Хьюи", 3)
-Duck4 = Duck("Скрудж", 4)
-lst = [Duck1, Duck2, Duck3, Duck4]
+duck1 = Duck("Луи", 1)
+duck2 = Duck("Дьюи", 2)
+duck3 = Duck("Хьюи", 3)
+duck4 = Duck("Скрудж", 4)
+lst = [duck1, duck2, duck3, duck4]
 print(lst)
-print(Duck1.col())
-print(Duck2.say())
-print(Duck3 > Duck4)
-print(Duck1 != Duck2)
-print(Duck2 + Duck4)
+print(duck1.col())
+print(duck2.say())
+print(duck3 > duck4)
+print(duck1 != duck2)
+print(duck2 + duck4)
 

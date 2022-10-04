@@ -1,6 +1,6 @@
 # изменила имя переменных dict и dict1
 def replace(s, mydict):
-    for key in mydict:
+    for key, value in mydict.items():
         s = s.replace(str(key), str(mydict[key]))
     return s
 

@@ -1,0 +1,39 @@
+import os
+
+
+class WrapStrToFile:
+    def __init__(self):
+        # здесь инициализируется атрибут filepath, он содержит путь до файла-хранилища
+        self._filepath = r"C:\Users\Лисичка\PythonCourse2.0_August22\Practice\GarbisO\File_for_task.txt"
+
+    @property
+    def content(self):
+        try:
+           with open(self._filepath, "r") as f:
+               print(file.read())
+        except:
+            return "Файл еще не существует"
+
+        # попытка чтения из файла, в случае успеха возвращаем содержимое
+        # в случае неудачи возвращаем 'File doesn't exist'
+
+    @content.setter
+    def content(self, value):
+        with open(self._filepath, "w") as f:
+            file.write(value)
+        # попытка записи в файл указанного содержимого
+
+    @content.deleter
+    def content(self):
+        os.remove(self._filepath)
+
+        # удаляем файл: os.remove(имя_файла)
+
+
+wstf = WrapStrToFile()
+print(wstf.content)  # Output: File doesn't exist
+wstf.content = 'test str'
+print(wstf.content)  # Output: test_str
+wstf.content = 'text 2'
+print(wstf.content)  # Output: text 2
+del wstf.content     # после этого файла не существует
