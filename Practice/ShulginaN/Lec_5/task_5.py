@@ -3,9 +3,9 @@
 # либо же заменить все комбинации из четырех символов пробела на символ табуляции
 # (в зависимости от опции указанной пользователем).
 
-fo = open("my_file.txt", "r")
-reading = fo.read()
-fo.close()
+
+with open("my_file.txt", "r") as fo:
+    reading = fo.read()
 my_choice = input("Что необходимо заменить? 1 - табуляция на пробелы, 2 - пробелы на табуляцию \n")
 
 with open("my_file.txt", "w") as fw:
