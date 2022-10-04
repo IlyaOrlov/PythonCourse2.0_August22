@@ -9,7 +9,7 @@ class Bankomat:
     def quantity_cash(self):
         return self._quantity_cash
 
-    def quantity_cash(self):
+    def inner_menu(self):
         choice_user = input('Выберите операцию 1 - внести 2 - снять: ')
         if choice_user == '1':
             cash_in = int(input('Какую сумму вы хотите внести: '))
@@ -30,14 +30,14 @@ class Bankomat:
             for i in range(len(all_atm)):
                 print(f'В банкомате {all_atm[i]._name} наличности {all_atm[i]._quantity_cash}')
         else:
-            for _ in cls.option_lst:
-                print(_, end=', ')
+            for i in cls.option_lst:
+                print(i, end=', ')
             print()
 
 
     def menu(self, choice_user, choice_ATM, all_atm):
         if choice_user == 1:
-            self.quantity_cash()
+            self.inner_menu()
         elif choice_user == 2:
             if choice_ATM == 1:
                 print('Данный банкомат не принимает платежи')

@@ -4,24 +4,24 @@ import os
 
 class WrapStrToFile:
     def __init__(self):
-        self.filepath = tempfile.mktemp()
+        self._filepath = tempfile.mktemp()
 
     @property
     def content(self):
         try:
-            with open(self.filepath, 'r') as f:
+            with open(self._filepath, 'r') as f:
                 return f.read()
         except Exception:
             return 'Файл еще не существует'
 
     @content.setter
     def content(self, value):
-        with open(self.filepath, 'w') as f:
+        with open(self._filepath, 'w') as f:
             f.write(value)
 
     @content.deleter
     def content(self):
-        os.remove(self.filepath)
+        os.remove(self._filepath)
 
 
 wstf = WrapStrToFile()
