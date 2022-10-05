@@ -1,7 +1,7 @@
 str_num = ""
 
 while True:
-    s = input('Введите число: ')
+    s = input('Введите число, для выхода введите "stop" : ')
 
     if s.lower() == 'stop':
         break
@@ -11,4 +11,4 @@ while True:
         continue
 
     str_num += s
-    print(str_num)
+print(str_num)

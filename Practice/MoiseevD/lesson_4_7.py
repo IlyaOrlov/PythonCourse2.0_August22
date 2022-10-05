@@ -1,14 +1,16 @@
 def decor_start(start):
     def decor_finish(*args, **kwargs):
+        print("=====1======")
         res = start(*args, **kwargs)
+        print("=====2======")
         return res
     return decor_finish
 
 
 @decor_start
 def start_finish(start):
-    print(f'После запуска функции {start}')
+    print(start)
 
-line = "============"
-print(f'До запуска функции {line}')
-start_finish(line)
+
+start_finish('=================')
+
