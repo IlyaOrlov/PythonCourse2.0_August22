@@ -1,12 +1,12 @@
 def sort(arr):
     for i in range(len(arr)):
-        min = i
+        num = i
 
         for a in range(i + 1, len(arr)):
-            if arr[a] < arr[min]:
-                min = a
+            if arr[a] < arr[num]:
+                num = a
 
-        arr[min], arr[i] = arr[i], arr[min]
+        arr[num], arr[i] = arr[i], arr[num]
     return arr
 
 arr = [0,3,24,2,3,7]

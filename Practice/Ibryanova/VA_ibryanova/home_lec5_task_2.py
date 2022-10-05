@@ -1,7 +1,14 @@
-def fun(lst):
-    for i in range(len(lst)):
-        if lst[i] in lst[:i:]:
-            return lst[i]
+def fun(num):
+    for i in range(len(num)):
+       if num[i] in lst1:
+           print({num[i]})
+           break
+       else:
+           lst1.add(num[i])
 
 lst = [2, 3, 4, 5, 3, 2]
-print(fun(lst))
+lst1 = set()
+fun(lst)
+
+
+
