@@ -13,7 +13,7 @@ class Pupil(Man):
     def solve_task(self):
         delay = random.randint(3, 6)
         time.sleep(delay)
-        print("I'm not ready yet")
+        super().solve_task()
 
 a = Man('Вася')
 b = Pupil('Петя')
