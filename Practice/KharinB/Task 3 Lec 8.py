@@ -1,4 +1,6 @@
 import time
+
+
 class MyManager:
     def __enter__(self):
         self._start = time.time()

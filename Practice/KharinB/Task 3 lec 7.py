@@ -11,7 +11,7 @@ class PerTer:
 
     @cash.setter
     def cash(self, value):
-        if not type(self._cash) is int:
+        if type(self._cash) is not int:
             print("В терминале отсутствует функция пополнения")
         if type(value) is int:
             self._cash += value
@@ -24,13 +24,13 @@ class PerTer:
             if j[0] != "_" and j != 'show_info':
                 met.append(j)
         print("------------")
-        print(f"наличние в терминале {self.name}:{self._cash}")
+        print(f"наличные в терминале {self.name}: {self._cash}")
         print(met)
 
 
 class Terminal(PerTer):
     def __init__(self, name):
-        super().__init__(name, "Терминал не хранит наличные")
+        super().__init__(name, None)
 
 
     def check_acc(self):

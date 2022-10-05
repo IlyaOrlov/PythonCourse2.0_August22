@@ -10,13 +10,13 @@ class Tank:
 
     def run(self, vec):
         if vec == "a" and self.vector == "a":  # Проверяем направление танка, и если башня повёрнута в сторону заявленного движение, то движимся по соответствующей оси.
-            self.pos[0] += (-self.speed)
+            self.pos[0] += -self.speed
         elif vec == "d" and self.vector == "d":
-            self.pos[0] += (self.speed)
+            self.pos[0] += self.speed
         elif vec == "s" and self.vector == "s":
-            self.pos[1] += (self.speed)
+            self.pos[1] += self.speed
         elif vec == "w" and self.vector == "w":
-            self.pos[1] += (self.speed)
+            self.pos[1] += -self.speed
         self.vector = vec  # вне зависимости от того движимся мы или нет, мы поворачиваем башню в заявленную сторону
 
     @staticmethod

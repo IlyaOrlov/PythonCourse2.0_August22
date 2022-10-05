@@ -3,11 +3,8 @@ import itertools
 def sum_lst(*args):
     return list(itertools.chain(*args))
 
-def filtr_len(s):
-    return len(s)<5
-
 def filtr(lst):
-    return list(itertools.filterfalse(filtr_len, lst))
+    return list(itertools.filterfalse(lambda s: len(s)<5, lst))
 
 def comb(s):
     return list(itertools.combinations(s, 4))
