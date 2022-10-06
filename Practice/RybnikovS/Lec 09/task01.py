@@ -6,9 +6,16 @@ import re
 # pattern = re.compile(r"git [a-z]{3,5} (?:--set-upstream origin .*|\w* \w*|.*.py|.*/.*.git\")")
 
 
-pattern = re.compile(r"git [a-z]{3,8} (?:(?:|--set-upstream\s)origin .*|.*.py|.*/.*.git\"|"
-                     r"\w*@.*.git |-\w (?:\w+|\".*\"))")
+# pattern = re.compile(r"git [a-z]{3,8} (?:(?:|--set-upstream\s)origin .*|.*.py|.*/.*.git\"|"
+#                      r"\w*@.*.git |-\w (?:\w+|\".*\"))")
 
+
+# pattern = re.compile(r"git [a-z]{3,8} (?:(?:|--set-upstream\s)origin .*|.*.py|https[a-zA-Z0-9_/./:]*\.git|"
+#                      r".*@[a-zA-Z0-9_/./:]*\.git|-\w (?:\w+|\".*\"))")
+
+pattern = re.compile(r"git [a-z]{3,8} (?:(?:|--set-upstream\s)origin .*|.*.py|"
+                     r"(?:https|.*@)[a-zA-Z0-9_/./:]*\.git"
+                     r"|-\w (?:\w+|\".*\"))")
 
 # pattern = re.compile(r"git [a-z]{3,5} (?:|--set-upstream\s)origin .*")
 # pattern = re.compile(r"git [a-z]{3,5} ")
