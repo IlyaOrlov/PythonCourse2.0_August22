@@ -1,7 +1,7 @@
-# изменила имя переменных dict и dict1
+# заменила mydict[key] на value. Но, как ни странно, код до замены работал
 def replace(s, mydict):
     for key, value in mydict.items():
-        s = s.replace(str(key), str(mydict[key]))
+        s = s.replace(str(key), str(value))
     return s
 
 

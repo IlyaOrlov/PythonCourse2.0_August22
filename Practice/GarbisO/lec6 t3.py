@@ -1,16 +1,18 @@
+# заменила абсолютный путь на относительный (через функцию). Исправила геттер
+
 import os
 
 
 class WrapStrToFile:
     def __init__(self):
         # здесь инициализируется атрибут filepath, он содержит путь до файла-хранилища
-        self._filepath = r"C:\Users\Лисичка\PythonCourse2.0_August22\Practice\GarbisO\File_for_task.txt"
+        self._filepath = tempfile.mktemp()
 
     @property
     def content(self):
         try:
            with open(self._filepath, "r") as f:
-               print(file.read())
+               return file.read()
         except:
             return "Файл еще не существует"
 
