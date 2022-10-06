@@ -6,6 +6,7 @@
 # и запрашивающий у каждого банкомата информацию о количестве наличных и наборе поддерживаемых операций.
 
 class ATM:
+
     def __init__(self, id, storage):
         self.id = id
         self._storage = storage
@@ -31,19 +32,15 @@ class ATM:
             print('Введена некорректная сумма для снятия')
 
     def show(self):
-        a = []
         a1 = 'Внесение'
         a2 = 'Cнятие'
         a3 = 'Онлайн-платежи'
-        for _ in self.__dir__():
-            if 'online_pay' in self.__dir__():
-                a = a1 + ' ' + a2 + ' ' + a3
-                print(a)
-                break
-            else:
-                a = a1 + ' ' + ' ' + a2
-                print(a)
-                break
+        if 'online_pay' in self.__dir__():
+            a = a1 + ' ' + a2 + ' ' + a3
+            print(a)
+        else:
+            a = a1 + ' ' + ' ' + a2
+            print(a)
         print(f'В банкомате {self.id} хранится: {self._storage}')
 
 class First(ATM):
