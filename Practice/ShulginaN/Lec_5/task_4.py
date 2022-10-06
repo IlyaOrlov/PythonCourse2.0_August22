@@ -5,7 +5,7 @@
 def search(ls, a):
     ind = set()
     for i in range(len(ls)):
-        for m in range((len(ls[i]))):
+        for m in range(len(ls[i])):
             if a == ls[i][m]:
                 ind.add(m)
     ind = list(ind)
