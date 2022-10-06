@@ -1,8 +1,8 @@
 class MyIterator:
 
-    def __init__(self, f, parameter):
-        self._f = f
+    def __init__(self, file_name, parameter):
         self._parameter = parameter
+        self._f = open(file_name, encoding="utf")
 
     def __iter__(self):
         return self
@@ -10,20 +10,23 @@ class MyIterator:
     def __next__(self):
         temp = " "
         res = ""
-        while temp != "":
-            temp = self._f.read(1)
-            if temp == self._parameter:
-                break
-            else:
-                res += temp
-        if res[-1] == "\n":
-            res = res[:-1]
-        return res
+        if temp != "":
+            while temp != "":
+                temp = self._f.read(1)
+                if temp == self._parameter:
+                    break
+                else:
+                    res += temp
+            return res
+        else:
+            raise StopIteration
+
+    def __del__(self):
+        self._f.close()
 
 
-with open("task01_text.txt", encoding="utf") as f:
-    it_text = MyIterator(f, "§")
-    print(next(it_text))
-    print(next(it_text))
-    print(next(it_text))
-    print(next(it_text))
+it_text = MyIterator("task01_text.txt", "§")
+print(next(it_text))
+print(next(it_text))
+print(next(it_text))
+print(next(it_text))

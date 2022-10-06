@@ -1,5 +1,10 @@
-with open("task01_text.txt", encoding="utf") as f:
-    x = (i[:-1] for i in f.readlines())
-print(x)
-print(next(x))
-print(next(x))
+def iter_file_by_line(filename):
+    with open(filename, encoding="utf") as f:
+        for line in f:
+            yield line
+
+
+x = iter_file_by_line("task01_text.txt")
+for i in x:
+    print(i)
+
