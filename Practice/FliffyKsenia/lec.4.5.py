@@ -12,7 +12,9 @@ while True:
         range_min = input("Введите целое число, являющееся началом диапазона: ")
     while not range_max.isdigit():# проверка на то, что max значение являеся целым числом
         range_max = input("Введите целое число, являющееся концом диапазона: ")
-    if int(range_min) >= int(range_max): # проверка на то, что min значение меньше max
+    range_min = int(range_min)
+    range_max = int(range_max)
+    if range_min >= range_max: # проверка на то, что min значение меньше max
         print("Вы указали не корректный диапазон: ")
         range_min = " "
         range_max = " "
@@ -20,7 +22,7 @@ while True:
         break
 
 #вызываем рандом в указанном диапазоне чисел
-vybor_kompyter = random.randint(int(range_min), int(range_max))
+vybor_kompyter = random.randint(range_min, range_max)
 #print(vybor_kompyter)
 
 # пользователь должен ввести число, в указанном им раннее диапазоне для угадывания выбора компьютером
@@ -35,17 +37,18 @@ while True:
     # проверка на ввод пользователем числа, если введеное значение не является числом:
     if not (ugadai_chislo.isdigit()):
         #выход из программы
-        print("Пока! Жаль, что мы так быстро расстаемся!: ")
+        print("Пока! Жаль, что мы так быстро расстаемся! ")
         break
 
 
     # проверка на то, что заданное пользователем число больше или равно введеного им минимального значения
-    if int(ugadai_chislo) <= int(range_min) or int(ugadai_chislo) >= int(range_max):
+    ugadai_chislo = int(ugadai_chislo)
+    if ugadai_chislo < range_min or ugadai_chislo > range_max:
         print("Вы указали число, находящееся вне заданного ранее вами диапазона")
      # проверка на то, что заданное пользователем число меньше или равно введеного им максимального значения
-    elif int(ugadai_chislo) >= vybor_kompyter:
+    elif ugadai_chislo > vybor_kompyter:
         print("Очень жаль, но вы не угадали. Вы ввели число больше, чем следовало: ")
-    elif int(ugadai_chislo) <= vybor_kompyter:
+    elif ugadai_chislo < vybor_kompyter:
         print("Очень жаль, но вы не угадали. Вы ввели число меньше, чем следовало: ")
 
     else:

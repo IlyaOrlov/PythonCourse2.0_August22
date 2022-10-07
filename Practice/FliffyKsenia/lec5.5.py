@@ -2,7 +2,7 @@ import os.path
 
 filename_in = '\/'
 vybor = ''
-variant_vybora = ["0", "1"]
+variant_vybora = ("0", "1")
 tabs = '\t'
 probel = '    '
 
