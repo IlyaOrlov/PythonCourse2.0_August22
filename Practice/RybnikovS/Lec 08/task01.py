@@ -3,21 +3,22 @@ class MyIterator:
     def __init__(self, file_name, parameter):
         self._parameter = parameter
         self._f = open(file_name, encoding="utf")
+        self.temp = " "
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        temp = " "
         res = ""
-        if temp != "":
-            while temp != "":
-                temp = self._f.read(1)
-                if temp == self._parameter:
-                    break
+        if self.temp != "":
+            while True:
+                self.temp = self._f.read(1)
+                if self.temp != self._parameter:
+                    res += self.temp
+                    if self.temp == "":
+                        return res
                 else:
-                    res += temp
-            return res
+                    return res
         else:
             raise StopIteration
 
@@ -26,7 +27,5 @@ class MyIterator:
 
 
 it_text = MyIterator("task01_text.txt", "§")
-print(next(it_text))
-print(next(it_text))
-print(next(it_text))
-print(next(it_text))
+for i in it_text:
+    print(i)
