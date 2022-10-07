@@ -3,6 +3,6 @@ d = {'Правильно': 'Right', 'цель': 'goal', 'достигнута': 
 print(s)
 
 for i, value in d.items():
-    s = s.replace(str(i), str(d[i]))
+    s = s.replace(str(i), str(value))
 print(s)
 
