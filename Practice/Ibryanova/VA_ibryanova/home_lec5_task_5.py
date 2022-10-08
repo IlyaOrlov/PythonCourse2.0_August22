@@ -11,11 +11,12 @@ f_out = open(FILENAME, 'w')
 if x == '1':
     #f_out = open(FILENAME, 'w')
     f_out.write(s.replace('\t', '    '))
-    f_out.close()
+    #f_out.close()
 else:
     #f_out = open(FILENAME, 'w')
     f_out.write(s.replace('    ', '\t'))
-    f_out.close()
+    #f_out.close()
+f_out.close()
 
 
 
