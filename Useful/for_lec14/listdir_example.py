@@ -4,7 +4,8 @@ import os
 def show_dir(cur_dir):
     for i in os.listdir(cur_dir):
         path = os.path.join(cur_dir, i)
-        if os.path.isfile(path):
+        print(path)
+        if os.path.isfile(i):
             print(f"Файл: {i}")
         else:
             print(f"Папка: {i}")
