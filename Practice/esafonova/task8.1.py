@@ -11,16 +11,14 @@ class Iterator:
     def __next__(self):
         a = " "
         b = ""
-        try:
-            while a != "":
-                a = self._f.read(1)
-                if a == self._simbol:
-                    break
-                else:
-                    b += a
-            return b
-        except StopIteration:
-            pass
+        while a != "":
+            a = self._f.read(1)
+            if a == self._simbol:
+                return b
+            else:
+                b += a
+        # return b Вот в этом месте вопрос, как вернуть последнее значение в цикле до raise
+        raise StopIteration
 
     def __del__(self):
         self._f.close()
@@ -32,4 +30,8 @@ print(next(text))
 print(next(text))
 print(next(text))
 print(next(text))
+print(next(text))
+print(next(text))
+print(next(text))
+
 
