@@ -1,4 +1,4 @@
-class Tanks():
+class Tanks:
 
     def __init__(self, classes, pluses):
         #print(self)

@@ -1,4 +1,4 @@
-class Duck():
+class Duck:
     color = 'Серый'
 
     def __init__(self, name, weight):

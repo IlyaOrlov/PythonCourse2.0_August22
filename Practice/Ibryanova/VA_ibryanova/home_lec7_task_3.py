@@ -14,7 +14,6 @@ class WrapStrToFile:
         try:
             with open(self.filepath, 'r') as f:
                 res = f.read()
-                f.close()
                 return res
         except:
             return 'Файл еще не существует'
@@ -28,7 +27,6 @@ class WrapStrToFile:
     def content(self, value):
         with open(self.filepath, 'w') as f:
             f.write(value)
-            f.close()
 
     # попытка записи в файл указанного содержимого
 
