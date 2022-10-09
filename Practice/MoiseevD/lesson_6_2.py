@@ -4,14 +4,11 @@ class Duck:
         self._weight = weight
         self._collor = collor
 
-
     def name_weight(self):
         print('Имя:', self._name, '     Вес:', self._weight, 'кг')
 
-
     def __repr__(self):
         return f'class Duck: name = {self._name}   weight = {self._weight}   collor = {self._collor}'
-
 
     def __lt__(self, other):
             if self._weight < other._weight:
@@ -19,17 +16,11 @@ class Duck:
             else:
                 return self._name
 
-
     def __ne__(self, other):
-        if self._weight != other._weight:
-            return False
-        else:
-            return True
-
+            return self._weight != other._weight
 
     def __add__(self, other):
             return self._weight + other._weight
-
 
     @classmethod
     def collor_duck(cls, collor):
@@ -46,9 +37,9 @@ p1 = Duck('КряКря', 7, 'черный',)
 p.crack_duck()
 p.collor_duck('черный')
 p.name_weight()
-print(p.__repr__())
-print(p1.__repr__())
+print(repr(p))
+print(repr(p1))
 print('Самая тяжелая утка: ', p < p1)
-print('Вес равен или не равен: ', p != p1)
+print('Вес уток не равен: ', p != p1)
 print('Общий вес уток: ', p + p1)
 
