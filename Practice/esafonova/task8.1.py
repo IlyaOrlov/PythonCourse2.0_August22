@@ -17,8 +17,10 @@ class Iterator:
                 return b
             else:
                 b += a
-        # return b Вот в этом месте вопрос, как вернуть последнее значение в цикле до raise
-        raise StopIteration
+        if b != "":
+            return b
+        else:
+            raise StopIteration
 
     def __del__(self):
         self._f.close()
