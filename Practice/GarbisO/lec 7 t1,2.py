@@ -4,18 +4,18 @@ import random
 
 class Man:
     def __init__(self, name):
-        self.name = "name"
+        self.name = name
 
-    @staticmethod
-    def solve_task():
+    def solve_task(self):
         print("I'm not ready yet")
 
 
-class Pupil:
-    def __init__(self):
-        print("Новый класс")
-
-    @staticmethod
-    def solve_task():
+class Pupil(Man):
+    def solve_task(self):
         time.sleep(random.randint(3, 6))
-        print("I'm not ready yet")
+        super().solve_task()
+
+man1 = Man("Ivan")
+man1.solve_task()
+pupil1 = Pupil("Petr")
+pupil1.solve_task()
