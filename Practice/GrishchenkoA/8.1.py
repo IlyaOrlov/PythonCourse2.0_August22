@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 class IterRead:
     def __init__(self, file_new, symbol):
         self.file_new = file_new
@@ -22,12 +22,10 @@ class IterRead:
                         self.ind = file.tell()
                         return text
                     self.ind += 1
-                # else:
-                #     raise StopIteration
         except:
-            print("****")
+            return "Файл не существует"
 
-c = IterRead("text8.txt", "~")
+c = IterRead("text4.txt", "~")
 for i in c:
     print(i)
     print("===============")
