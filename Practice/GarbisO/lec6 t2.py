@@ -26,8 +26,8 @@ class Duck:
         return self.weight != other.weight
 
     def __add__(self, other):
-        print(f"Общий вес уток: {self.weight + other.weight}")
-        return None
+        return f"Общий вес уток: {self.weight + other.weight}"
+
 
 duck1 = Duck("Луи", 1)
 duck2 = Duck("Дьюи", 2)
