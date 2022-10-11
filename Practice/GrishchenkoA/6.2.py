@@ -20,7 +20,10 @@ class Duck:
 
 
     def __lt__(self, other):
-        return {other.name}
+        if self.weight < other.weight:
+            return other.name
+        else:
+            return self.name
 
 
     def __ne__(self, other):
@@ -41,6 +44,6 @@ Duck.color_duck()
 print(repr(d1))
 print(repr(d2))
 print(repr(d3))
-print(d2 < d3)
+print(f"Утка {d2 < d3} весит больше")
 print(d1 != d2)
 print(f"Вес двух уток равен {d1 + d3} грамм")
