@@ -13,14 +13,16 @@ class MyIterator:
     def __next__(self):
         my_str = ' '
         res = ""
-        while True:
-            if my_str != "":
-                my_str = self.file.read(1)
-                res += my_str
-                if my_str == self.sym:
-                    return res
+        while my_str != "":
+            my_str = self.file.read(1)
+            if my_str == self.sym:
+                break
             else:
-                raise StopIteration
+                res += my_str
+        if my_str != "":
+            return res
+        else:
+            raise StopIteration
 
 
 with open("my_file.txt", "r") as f:
