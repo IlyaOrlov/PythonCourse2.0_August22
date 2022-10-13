@@ -1,12 +1,15 @@
-array = [0, 3, 24, 2, 3, 7]
 
 def arr_sort(arr):
     for i in range(len(arr)):
-        min = i
+        m = i
         for j in range(i + 1, len(arr)):
-            if arr[j] < arr[min]:
-                min = j
-        arr[i], arr[min] = arr[min], arr[i]
+            if arr[j] < arr[m]:
+                m = j
+        arr[i], arr[m] = arr[m], arr[i]
+        if i != m:
+            arr[i], arr[m] = arr[m], arr[i]
+
+array = [0, 3, 24, 2, 3, 7]
 
 arr_sort(array)
 print(array)
