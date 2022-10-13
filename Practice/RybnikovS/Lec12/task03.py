@@ -7,7 +7,8 @@ response = request.urlopen(req)
 web_page = response.read().decode()
 
 
-s = re.compile(r'https[\/\:\w\.\d\?\=]+[^\"]')
+s = re.compile(r'"http[\/\:a-zA-Z\.\d\?\=]+[^\":]')
+
 res = re.findall(s, web_page)
 print(res)
 
