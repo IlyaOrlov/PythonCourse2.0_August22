@@ -1,0 +1,9 @@
+trace: ERROR-2345 some text
+trace: ERROR-2376 some another text
+trace: WARNING-2376 some another text
+;lk;lk;lk;l
+wpoeipoipoi
+,mn,mn,mn
+oiuoiuoiu
+module: ERROR-2378
+
