@@ -22,10 +22,12 @@ class IterRead:
                         self.ind = file.tell()
                         return text
                     self.ind += 1
+                if txt == "":
+                    raise StopIteration
         except:
             return "Файл не существует"
 
-c = IterRead("text4.txt", "~")
+c = IterRead("text1.txt", "~")
 for i in c:
     print(i)
     print("===============")
