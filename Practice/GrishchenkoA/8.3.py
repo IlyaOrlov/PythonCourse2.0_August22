@@ -1,6 +1,6 @@
 import time
 
-class Manager_Time:
+class ManagerTime:
     def __enter__(self):
         self.start = time.time()
 
@@ -9,6 +9,6 @@ class Manager_Time:
         print(f"Время выполнения программы заняло: {self.stop} секунд")
 
 
-with Manager_Time():
+with ManagerTime():
     for i in range(100000):
         i += i
