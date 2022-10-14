@@ -19,7 +19,7 @@ class MyIterator:
                 break
             else:
                 res += my_str
-        if my_str != "":
+        if res != "":
             return res
         else:
             raise StopIteration
