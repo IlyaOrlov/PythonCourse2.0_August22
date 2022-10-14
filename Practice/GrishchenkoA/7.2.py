@@ -17,6 +17,7 @@ class Pupil(Man):
 
 
 Pupill_1 = Pupil("Svetlana")
-Pupill_1.solve_task()
+Man_1 = Man("Petr")
+Man_1.solve_task()
 print(Pupill_1.name)
 

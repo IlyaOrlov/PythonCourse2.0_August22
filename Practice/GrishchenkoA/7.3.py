@@ -6,7 +6,7 @@ class ATM:
         def get_cash(self):
             return self._cash
 
-        def set_cash(self, name):
+        def set_cash(self):
             self._cash = cash
 
 
@@ -16,6 +16,7 @@ class SimpleATM(ATM):
             return money
         else:
             print("Неверно введена сумма")
+
     def choice(self):
         request = input("Выберите желаемую операцию: 1 - если хотите внести наличные, 2 - если хотите снять наличные: ")
         if request == "1":
@@ -35,10 +36,12 @@ class SimpleATM(ATM):
 class SuperATM(ATM):
     def choice(self):
         request = input("Выберите желаемую операцию: 1 - если хотите внести наличные, 2 - если хотите снять наличные, 3 - хотите оплатить онлайн: ")
+
         if request == "1":
             money = float(input("Введите сумму для внесения наличных на счет: "))
             self._cash = self._cash + money
             print(f"На вашем счету теперь: {self._cash} рублей")
+
         if request == "2":
             money = float(input("Введите сумму, которую хотите снять со счета: "))
             if self._cash < money:
@@ -46,6 +49,7 @@ class SuperATM(ATM):
             else:
                 self._cash = self._cash - money
                 print(f"На вашем счету теперь: {self._cash} рублей")
+
         if request == "3":
             money = float(input("Введите сумму для оплаты онлайн: "))
             if self._cash < money:
