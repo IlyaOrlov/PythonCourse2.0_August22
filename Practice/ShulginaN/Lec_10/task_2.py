@@ -3,8 +3,10 @@
 # попробуйте сформулировать его по-другому».
 
 
-while case != "stop":
-    match input("Начните разговор: "):
+query = ""
+while query != "stop":
+    query = input("Начните разговор: ")
+    match query:
         case "Привет":
             print("Здравствуйте!")
         case "Как дела?":
