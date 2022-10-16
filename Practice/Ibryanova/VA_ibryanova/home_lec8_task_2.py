@@ -18,3 +18,5 @@ class Pupil(Man):
 
 m = Man('Vladimir')
 m.solve_task()
+a = Pupil('Kate')
+a.solve_task()
