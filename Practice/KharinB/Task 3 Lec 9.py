@@ -10,7 +10,7 @@ while True:
     if len(lst_dir) > 1:
         for d in lst_dir:
             res_dir = now - os.path.getctime(d[0])
-            if res_dir > 60 and d[2]==[] and d[1] == []:
+            if res_dir > 120 and d[2]==[] and d[1] == []:
                 print(f"del {d[0]}")
                 shutil.rmtree(d[0])
                 break
@@ -19,7 +19,7 @@ while True:
                 if d2:
                     for f in d2:
                         res_file = now - os.path.getctime(f"{d[0]}/{f}")
-                        if res_file > 30:
+                        if res_file > 60:
                             print(f"del {f}")
                             os.remove(f"{d[0]}/{f}")
     else:
