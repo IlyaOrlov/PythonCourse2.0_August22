@@ -1,5 +1,5 @@
 while True:
-    match (input("Введите что-нибудь: ")):
+    match input("Введите что-нибудь: "):
         case "Привет!":
             print("Привет!")
         case "Как дела?":
