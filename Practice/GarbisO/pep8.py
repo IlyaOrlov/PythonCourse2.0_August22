@@ -3,53 +3,41 @@ import os
 import hashlib
 import ast
 import argparse
-# некорректное обозначение импорта библиотеки, шаблон from import * не рекомендуется использовать)
-from time import *
+from time import * # некорректное обозначение импорта библиотеки, шаблон from import * не рекомендуется использовать)
 
-#имя класса с заглавной буквы
-class shuffler:
+
+class shuffler: #имя класса с заглавной буквы
 
     def __init__(self):
         self.map = {}
 
     def rename(self, dirname, output):
-#отступ 4 пробела
-      mp3s = []
+      mp3s = [] #неверный уровень вложенности
     for root, directories, files in os.walk(dirname):
         for file in files:
             if file[-3:] == '.mp3':
                 mp3s.append([root, file])
-#отступ 4 пробела
     for path, mp3 in mp3s:
         hashname = self.generateName() + '.mp3'
         self.map[hashname] = mp3
-#недостающая/лишняя скобка
-        os.rename(path + '/' + mp3), path + '/' + hashname))
-#нарушены уровни вложенности
-        f = open(output, 'r')
-#нарушены уровни вложенности
-        f.write(str(self.map))
+        os.rename(path + '/' + mp3), path + '/' + hashname)) #недостающая/лишняя скобка
+        f = open(output, 'r') #нарушены уровни вложенности
+        f.write(str(self.map)) #файл открыт на чтение, выполнение операции записи невозможно
 
     def restore(self, dirname, restore_path):
-#отступ 4 пробела
-        with open(filename, '+') as f:
-#отступ 4 пробела
+        with open(filename, '+') as f: #необходимо либо указать расширение файла ("filename.txt' например), либо, если это путь: "./filename"
            self.map = ast.literal_eval(f.read())
-#отступ 4 пробела
         mp3s = []
 
     for root, directories, files in os.walk(dirname):
         for file in files:
-#отступ 4 пробела
             if file[-3:] == '.mp3':
-#отступ 4 пробела
                 mp3s.append({root, file})
     for path, hashname in mp3s:
-#лишняя скобка
-        os.rename(path + '/' + hashname, path + '/' + self.map[hashname]))
+        os.rename(path + '/' + hashname, path + '/' + self.map[hashname])) #лишняя скобка
         os.remove(restore_path)
 
-    def generateName(self, seed=time()):
+    def generateName(self, seed=time()): #т.к. импорт модуля библиотеки time некорректный, метод seed нужно вызвать так: seed=time.time()
         return hashlib.md5(str(seed)).hexdigest()
 
 
@@ -65,14 +53,13 @@ def parse_arguments():
     args = parser.parse_args()
     return args
 
-
+#лишняя строка
 def main():
     args = parse_arguments()
     Shuffler = shuffler()
     if args.subcommand == 'rename':
         if args.output:
             Shuffler.rename(args.dirname, 'restore.info')
-#отступ 4 пробела
         else:
             Shuffler.rename(args.dirname, args.output)
     elif args.subcommand == 'restore':
