@@ -18,6 +18,7 @@ class Human:
         self._age = age
         self._place = place
 
+
 def generator_name_ser(s):
     lst = []
     name = ("Иван", "Антон", "Олег", "Дмитрий", "Сергей")
