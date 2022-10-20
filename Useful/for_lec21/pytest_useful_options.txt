@@ -1,0 +1,8 @@
+# pip install pytest-html - для генерации красивых отчетов
+# полезные опции pytest
+pytest - запуск всех тестов (файлов test_.*.py) по порядку
+pytest -p no:warnings - запуск тестов с отключенными warnings
+pytest --cov-report html:cov_html --cov ../../папка_с_исходниками - запуск тестов с формированием отчета о покрытии тестами модулей ядра.
+pytest --html=report.html --self-contained-html - запуск тестов с формированием self-contained html-отчета.
+pytest -s - отображение текущих логов во время теста (иначе логи будут доступны только после окончания теста).
+pytest test_tasks.py::TestTasksSuite::<test_function_name> - запуск конкретного теста
