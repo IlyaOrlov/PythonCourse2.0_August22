@@ -29,13 +29,13 @@ Base.metadata.create_all(engine)
 print(CreateTable(User.__table__).compile(engine))
 print('Таблица создана')
 
-# Создаем объект отображаемого класса
-ed_user = User(name='ed', fullname='Ed jones', password='edpassword')
-
 # Открываем сессию
 Session = sessionmaker(bind=engine)
 session = Session()
 print('Сессия открыта')
+
+# Создаем объект отображаемого класса
+ed_user = User(name='ed', fullname='Ed jones', password='edpassword')
 
 # Добавляем новый объект в базу
 session.add(ed_user)
