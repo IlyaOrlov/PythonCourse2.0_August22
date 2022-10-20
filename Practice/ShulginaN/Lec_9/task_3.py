@@ -32,5 +32,5 @@ while True:
                         if res > 60:
                             os.remove(f"{i[0]}/{f}")
         else:
-            print("Готово")
+            print("Готово ")
 
