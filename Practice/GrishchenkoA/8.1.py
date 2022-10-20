@@ -10,24 +10,24 @@ class IterRead:
         return self
 
     def __next__(self):
-        try:
-            with open(self.file_new, "r") as file:
-                text = ""
-                while self.ind != -1:
-                    file.seek(self.ind)
-                    txt = file.read(1)
-                    if txt != self.symbol:
-                        text += txt
-                    else:
-                        self.ind = file.tell()
-                        return text
-                    self.ind += 1
-                if txt == "":
-                    raise StopIteration
-        except:
-            return "Файл не существует"
+            text = ""
+            while self.ind != -1:
+                file.seek(self.ind)
+                txt = file.read(1)
+                if txt != self.symbol:
+                    text += txt
+                else:
+                    self.ind = file.tell()
+                    return text
+                self.ind += 1
+            if txt == "":
+                raise StopIteration
 
-c = IterRead("text1.txt", "~")
-for i in c:
-    print(i)
-    print("===============")
+    def __del__(self):
+        self.file_new()
+
+
+with open("text1.txt", "r") as file:
+    for i in IterRead(file, "~"):
+        print(i)
+        print("===============")

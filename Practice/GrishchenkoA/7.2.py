@@ -14,10 +14,10 @@ class Pupil(Man):
     def solve_task(self):
         time_new = random.randint(3, 6)
         res = time.sleep(time_new)
+        super().solve_task()
 
 
 Pupill_1 = Pupil("Svetlana")
 Man_1 = Man("Petr")
-Man_1.solve_task()
-print(Pupill_1.name)
+Pupill_1.solve_task()
 

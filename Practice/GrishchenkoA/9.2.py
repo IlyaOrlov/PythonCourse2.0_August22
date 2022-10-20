@@ -1,14 +1,18 @@
-#-*- coding: utf-8 -*-
+# #-*- coding: utf-8 -*-
 import datetime as dt
 
 def search_days(start, stop):
-    start = start.split('.')
-    stop = stop.split('.')
-    start_day = dt.date(int(start[2]), int(start[1]), int(start[0]))
-    stop_day = dt.date(int(stop[2]), int(stop[1]), int(stop[0]))
-    day = stop_day - start_day
-    work_day = day/7*5
+
+    day = (start + dt.timedelta(x) for x in range((stop - start).days + 1))
+    work_day = sum(1 for day in day if day.weekday() < 5)
     print(work_day)
 
+start_day = dt.date(2020,1,1)
+stop_day = dt.date(2020,2,1)
 
-search_days("01.01.2020", "01.02.2020")
+search_days(start_day, stop_day)
+
+
+
+
+
