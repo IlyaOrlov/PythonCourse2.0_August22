@@ -9,18 +9,20 @@ while True:
     now = dt.timestamp(dt.now())
     if len(lst_dir) > 1:
         for d in lst_dir:
-            res_dir = now - os.path.getctime(d[0])
-            if res_dir > 120 and d[2]==[] and d[1] == []:
-                print(f"del {d[0]}")
-                shutil.rmtree(d[0])
+            main_folder = d[0]
+            folders = d[1]
+            files = d[2]
+            res_dir = now - os.path.getctime(main_folder)
+            if res_dir > 120 and files == [] and folders == []:
+                print(f"del {main_folder}")
+                shutil.rmtree(main_folder)
                 break
             else:
-                d2 = d[2]
-                if d2:
-                    for f in d2:
-                        res_file = now - os.path.getctime(f"{d[0]}/{f}")
+                if files:
+                    for f in files:
+                        res_file = now - os.path.getctime(f"{main_folder}/{f}")
                         if res_file > 60:
                             print(f"del {f}")
-                            os.remove(f"{d[0]}/{f}")
+                            os.remove(f"{main_folder}/{f}")
     else:
         print("Все файлы удалены")

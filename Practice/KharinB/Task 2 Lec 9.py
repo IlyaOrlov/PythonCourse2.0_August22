@@ -17,31 +17,35 @@ def vvod(s, n, d):
             raise DataError
     return res
 
-def calculator_days(s = "18/9/2022", f = "22/10/2022" ):
+def calculator_days(s="18/9/2022", f="22/10/2022" ):
     a = True
-    start = vvod("Введите дату начала отсчёта(День/Месяц/Год): ", 0, s)
+    start_date, start_day = vvod("Введите дату начала отсчёта(День/Месяц/Год): ", 0, s)
     while a:
-        finish = vvod("Введите дату окончания отсчёта(День/Месяц/Год): ", 0, f)
-        if finish[0] < start[0]:
+        finish_date, finish_day = vvod("Введите дату окончания отсчёта(День/Месяц/Год): ", 0, f)
+        if finish_date < start_date:
             print("Введена некорректная дата окончания отсчёта")
-            print(f"Дата окончания отсчёта должна быть позже чем: {start[0]}")
+            print(f"Дата окончания отсчёта должна быть позже чем: {start_date}")
             continue
         a = False
 
     else:
-        start_m = start[0] - dt.timedelta(days=start[1])
-        finish_m = finish[0] - dt.timedelta(days=finish[1])
-        if start[1]>4:
-            if finish[1]>4:
+        return calculation(start_date, start_day, finish_date, finish_day)
+
+
+def calculation(start_date, start_day, finish_date, finish_day):
+        start_monday = start_date - dt.timedelta(days=start_day)
+        finish_monday = finish_date - dt.timedelta(days=finish_day)
+        if start_day > 4:
+            if finish_day > 4:
                 delta = 0
             else:
-                delta = finish[1]-5
+                delta = finish_day-5
         else:
-            delta = finish[1]-start[1]
-        if start_m == finish_m:
-            res = finish[1] - start[1]
+            delta = finish_day-start_day
+        if start_monday == finish_monday:
+            res = finish_day - start_day
         else:
-            res = ((finish_m - start_m) - (finish_m - start_m)/7*2).days - delta
+            res = ((finish_monday - start_monday) - (finish_monday - start_monday)/7*2).days - delta
         return res
 
 # По крайней мере именно так считает сайт, которым я регулярно пользуюсь: https://fincalculator.ru/kalkulyator-dnej
