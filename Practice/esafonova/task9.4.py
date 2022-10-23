@@ -36,17 +36,13 @@ def process_human_and_ser(n, file_name):
             pickle.dump(human, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def deser_human(file_name, n):
+def deser_human(file_name):
     with open(file_name, 'rb') as f:
-        humans = []
-        for i in range(n):
-            humans.append(pickle.load(f))
-    return humans
+        return pickle.load(f)
 
 
 process_human_and_ser(5, 'task9.4.1')
-humans = deser_human('task9.4.1', 5)
-for human in humans:
-    print(human)
+humans = deser_human('task9.4.1')
+print(humans)
 
 
