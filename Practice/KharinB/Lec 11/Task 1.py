@@ -1,3 +1,4 @@
+import math
 import time
 import threading
 import multiprocessing
@@ -11,14 +12,13 @@ def find_primes(start, end):
     else:
         res = []
         while start < end:
-            start_itert = 2
-            end_iter = start//2+1
-            while start_itert <= end_iter:
-                if start%start_itert == 0:
+            start_iter = 2
+            end_iter = math.sqrt(start)
+            while start_iter <= end_iter:
+                if start % start_iter == 0:
                     break
                 else:
-                    start_itert += 1
-                    end_iter = start//start_itert+1
+                    start_iter += 1
             else:
                 res.append(start)
             start += 1
