@@ -46,13 +46,14 @@ class Money:
         return True if self.rub == other.rub and self.pen == other.pen else False
 
 
-one = Money(50, 20)
-two = Money(100, 60)
-print(f"{one=}")
-print(f"{two=}")
-print(f"one + two", one + two)
-print(f"one - two", one - two)
-print("one == two", one == two)
-print("one != two", one != two)
-print("one >= two", one >= two)
-print("one > two", one > two)
+if __name__ == "__main__":
+    one = Money(50, 20)
+    two = Money(100, 60)
+    print(f"{one=}")
+    print(f"{two=}")
+    print(f"one + two", one + two)
+    print(f"one - two", one - two)
+    print("one == two", one == two)
+    print("one != two", one != two)
+    print("one >= two", one >= two)
+    print("one > two", one > two)

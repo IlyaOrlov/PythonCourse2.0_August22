@@ -13,13 +13,13 @@ class TestWithPytestSuite:
         print('After test suite')
 
     def test_low_num(self):
-        assert(to_roman(1) == "I")
+        assert to_roman(1) == "I"
 
     def test_medium_num(self):
-        assert(to_roman(2501) == "MMDI")
+        assert to_roman(2501) == "MMDI"
 
     def test_high_num(self):
-        assert(to_roman(4999) == "MMMMCMXCIX")
+        assert to_roman(4999) == "MMMMCMXCIX"
 
     def test_not_num(self):
         with pytest.raises(SystemExit) as e:
@@ -29,7 +29,6 @@ class TestWithPytestSuite:
     def test_more_than(self):
         with pytest.raises(SystemExit) as e:
             to_roman("5000")
-        assert e.type == SystemExit
         assert e.value.code == 555
 
 
