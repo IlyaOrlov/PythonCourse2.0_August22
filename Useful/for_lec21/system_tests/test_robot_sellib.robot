@@ -1,12 +1,12 @@
 *** Settings ***
-Documentation       Test google search
-Library             SeleniumLibrary
+Documentation  Test google search
+Library        SeleniumLibrary
 
 
 *** Test Cases ***
 Test Google Search
-    # Open Browser	http://www.google.com	chrome  options=add_experimental_option("excludeSwitches", ["enable-logging"])
-    Open Browser	http://www.google.com	chrome
+    Open Browser	http://www.google.com	chrome  options=add_experimental_option("excludeSwitches", ["enable-logging"])
+    # Open Browser	http://www.google.com	chrome
     Input Text	name=q	Cheese!
     Submit Form
     Wait Until Keyword Succeeds  10s  2s
