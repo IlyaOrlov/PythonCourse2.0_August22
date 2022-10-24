@@ -32,8 +32,8 @@ def process_human_and_ser(n, file_name):
         humans.append(human)
 
     with open(file_name, 'wb') as f:
-        for human in humans:
-            pickle.dump(human, f, protocol=pickle.HIGHEST_PROTOCOL)
+        # for human in humans:
+        pickle.dump(humans, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 def deser_human(file_name):
