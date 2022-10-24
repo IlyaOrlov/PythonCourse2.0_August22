@@ -8,4 +8,4 @@ def copyfile(source, destination):
 
 
 if __name__ == '__main__':
-    copyfile('source.txt', 'destination.txt')
+    copyfile('destination.txt', 'destination.txt')
