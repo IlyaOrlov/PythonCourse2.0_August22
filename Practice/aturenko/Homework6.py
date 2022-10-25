@@ -65,8 +65,10 @@ print(res)
 
 
 def retrep(arr):
+    s = set()
     for i in arr:
-        if arr[i] in arr[:i:]:
+        s.add(i)
+        if arr[i] in s:
             return arr[i]
 
 
@@ -93,7 +95,8 @@ def delcolumn(anylist, num):
     for row in anylist:
         for i in reversed(range(len(row))):
             if row[i] == num:
-                [row.pop(i) for row in anylist]
+                for row in anylist:
+                    row.pop(i)
     print(anylist)
 
 
@@ -107,31 +110,40 @@ delcolumn(mylist, 1)
 # указанной пользователем).
 
 def tab(filename):
+    user_option = input("Пожалуйста введите номер опции(1 - заменить табуляцию на пробелы,"
+                        " 2 - заменить пробелы на табуляцию): ")
     with open(filename) as fileobject:
         lines = fileobject.readlines()
     mystring = ''
     for line in lines:
-        mystring += line.replace('  ', '    ')
-        # mystring.replace('\t', '    ')
-    print(mystring)
+        if user_option == "1":
+            mystring += line.replace('\t', '    ')
+        elif user_option == "2":
+            mystring += line.replace('    ', '\t')
+        else:
+            print(f"Вы ввели не допустимое значение.")
+            break
+    print(repr(mystring))
 
-def wspace(filename):
-    with open(filename) as fileobject:
-        lines = fileobject.readlines()
-    mystring = ''
-    for line in lines:
-        mystring += line.replace('    ', '  ')
-        # mystring.replace('\t', '    ')
-    print(mystring)
+tab('hw6.txt')
 
-# tab('hw6.txt')
-user_option = input("Пожалуйста введите номер опции(1 - заменить табуляцию на пробелы, 2 - заменить пробелы на табуляцию): ")
-if user_option == "1":
-    tab('hw6.txt')
-elif user_option == "2":
-    wspace('hw6.txt')
-else:
-    print(f"Вы ввели не допустимое значение.")
+# def wspace(filename):
+#     with open(filename) as fileobject:
+#         lines = fileobject.readlines()
+#     mystring = ''
+#     for line in lines:
+#         mystring += line.replace('    ', '  ')
+#         # mystring.replace('\t', '    ')
+#     print(repr(mystring))
+#
+# # tab('hw6.txt')
+# user_option = input("Пожалуйста введите номер опции(1 - заменить табуляцию на пробелы, 2 - заменить пробелы на табуляцию): ")
+# if user_option == "1":
+#     tab('hw6.txt')
+# elif user_option == "2":
+#     wspace('hw6.txt')
+# else:
+#     print(f"Вы ввели не допустимое значение.")
 
 
 
