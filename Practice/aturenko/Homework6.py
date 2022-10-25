@@ -67,14 +67,17 @@ print(res)
 def retrep(arr):
     s = set()
     for i in arr:
-        s.add(i)
-        if arr[i] in s:
-            return arr[i]
+        if i not in s:
+            s.add(i)
+        else:
+            print(i)
+            break
+
+
 
 
 arr = [2, 3, 4, 5, 3, 2]
-res = retrep(arr)
-print(res)
+retrep(arr)
 
 # 3.Найти и заменить некие шаблоны в строке: есть строка с определенного вида форматированием,
 # необходимо заменить в этой строке все вхождения шаблонов на их значение из словаря.
