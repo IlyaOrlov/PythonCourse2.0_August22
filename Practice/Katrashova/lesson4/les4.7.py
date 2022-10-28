@@ -1,8 +1,9 @@
 def my_decor(func):
     def wrapper():
         print("===========")
-        func()
+        res = func()
         print("===========")
+        return res
     return wrapper
 
 def my_func():
