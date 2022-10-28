@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.7.9 on win32)" generated="20221024 20:57:06.896" rpa="false" schemaversion="2">
+<suite id="s1" name="Test Copy File" source="C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\test_copy_file.robot">
+<test id="s1-t1" name="Test File Copy">
+<kw name="On Test Setup" type="SETUP">
+<kw name="Create File" library="OperatingSystem">
+<arg>${src_file}</arg>
+<arg>${exp_content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20221024 20:57:06.931" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\source.txt"&gt;C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\source.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20221024 20:57:06.930" endtime="20221024 20:57:06.931"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${src_file}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<msg timestamp="20221024 20:57:06.931" level="INFO" html="true">File '&lt;a href="file://C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\source.txt"&gt;C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\source.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20221024 20:57:06.931" endtime="20221024 20:57:06.931"/>
+</kw>
+<status status="PASS" starttime="20221024 20:57:06.929" endtime="20221024 20:57:06.931"/>
+</kw>
+<kw name="File Should Not Exist" library="OperatingSystem">
+<arg>${dst_file}</arg>
+<doc>Fails if the given path points to an existing file.</doc>
+<msg timestamp="20221024 20:57:06.933" level="FAIL">File 'C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\destination.txt' exists.</msg>
+<status status="FAIL" starttime="20221024 20:57:06.932" endtime="20221024 20:57:06.933"/>
+</kw>
+<kw name="Run" library="OperatingSystem">
+<arg>${copy_script}</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="NOT RUN" starttime="20221024 20:57:06.933" endtime="20221024 20:57:06.933"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${dst_file}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="NOT RUN" starttime="20221024 20:57:06.933" endtime="20221024 20:57:06.933"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${content}</var>
+<arg>${dst_file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20221024 20:57:06.934" endtime="20221024 20:57:06.934"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>'${content}' == '${exp_content}'</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" starttime="20221024 20:57:06.934" endtime="20221024 20:57:06.934"/>
+</kw>
+<kw name="On Test Teardown" type="TEARDOWN">
+<kw name="Remove File" library="OperatingSystem">
+<arg>${src_file}</arg>
+<doc>Removes a file with the given path.</doc>
+<msg timestamp="20221024 20:57:06.935" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\source.txt"&gt;C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\source.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20221024 20:57:06.935" endtime="20221024 20:57:06.935"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${dst_file}</arg>
+<doc>Removes a file with the given path.</doc>
+<msg timestamp="20221024 20:57:06.936" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\destination.txt"&gt;C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\destination.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20221024 20:57:06.935" endtime="20221024 20:57:06.936"/>
+</kw>
+<status status="PASS" starttime="20221024 20:57:06.934" endtime="20221024 20:57:06.936"/>
+</kw>
+<doc>Test file copy script</doc>
+<tag>DEBUG</tag>
+<status status="FAIL" starttime="20221024 20:57:06.929" endtime="20221024 20:57:06.936">File 'C:\Users\Stmadm\Documents\PythonCourseProject2\PythonCourse2.0_August22\Useful\for_lec21\system_tests\destination.txt' exists.</status>
+</test>
+<doc>Check file actions</doc>
+<status status="FAIL" starttime="20221024 20:57:06.897" endtime="20221024 20:57:06.937"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">DEBUG</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Copy File">Test Copy File</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
