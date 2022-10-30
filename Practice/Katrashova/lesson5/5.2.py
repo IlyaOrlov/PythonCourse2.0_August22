@@ -1,6 +1,6 @@
 def fun(my_list):
     new_set = set()
-    for i in range(len(my_list)):
+    for i in my_list:
         if my_list[i] in new_set:
             print(f'Первый повторившийся символ: {my_list[i]} ')
             break
