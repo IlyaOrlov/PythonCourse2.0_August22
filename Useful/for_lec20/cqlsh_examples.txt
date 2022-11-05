@@ -1,0 +1,61 @@
+cqlsh> use example;
+cqlsh:example> INSERT INTO users (username, fullname, regdate, status) VALUES ("ivanovi", "Иван Иванов", 01.01.2020, "Available");
+SyntaxException: line 1:73 no viable alternative at input ','
+cqlsh:example> INSERT INTO users (username, fullname, regdate, status) VALUES ("ivanovi", "Иван Иванов", "2020-01-01", "Available");
+SyntaxException: line 1:73 no viable alternative at input ','
+cqlsh:example> INSERT INTO users (username, fullname, regdate, status) VALUES ('ivanovi', 'Иван Иванов', '2020-01-01', 'Available');
+InvalidRequest: Error from server: code=2200 [Invalid query] message="Missing mandatory PRIMARY KEY part id"
+cqlsh:example> INSERT INTO users (id, username, fullname, regdate, status) VALUES (1, 'ivanovi', 'Иван Иванов', '2020-01-01', 'Available');
+cqlsh:example> INSERT INTO users (id, username, fullname, regdate, status) VALUES (2, 'petrovp', 'Петр Петров', '2020-02-02', 'Busy');
+cqlsh:example> SELECT username FROM users WHERE id = 1;
+
+ username
+----------
+  ivanovi
+
+(1 rows)
+cqlsh:example> SELECT * FROM users WHERE id = 1;
+
+ id | fullname    | regdate    | status    | username
+----+-------------+------------+-----------+----------
+  1 | Иван Иванов | 2020-01-01 | Available |  ivanovi
+
+(1 rows)
+cqlsh:example> UPDATE users SET status = 'Busy' WHERE id = 1;
+cqlsh:example> SELECT * FROM users WHERE id = 1;
+
+ id | fullname    | regdate    | status | username
+----+-------------+------------+--------+----------
+  1 | Иван Иванов | 2020-01-01 |   Busy |  ivanovi
+
+(1 rows)
+cqlsh:example> INSERT INTO users (id, username, fullname, regdate, status) VALUES (3, "orlovi", 'Илья Орлов', '2020-03-03', 'Available');
+SyntaxException: line 1:79 no viable alternative at input ','
+cqlsh:example> INSERT INTO users (id, username, fullname, regdate, status) VALUES (3, 'orlovi', 'Илья Орлов', '2020-03-03', 'Available');
+cqlsh:example> SELECT * FROM users WHERE id = 3;
+
+ id | fullname   | regdate    | status    | username
+----+------------+------------+-----------+----------
+  3 | Илья Орлов | 2020-03-03 | Available |   orlovi
+
+(1 rows)
+cqlsh:example> SELECT * FROM users;
+
+ id | fullname    | regdate    | status    | username
+----+-------------+------------+-----------+----------
+  1 | Иван Иванов | 2020-01-01 |      Busy |  ivanovi
+  2 | Петр Петров | 2020-02-02 |      Busy |  petrovp
+  3 |  Илья Орлов | 2020-03-03 | Available |   orlovi
+
+(3 rows)
+cqlsh:example> DELETE FROM users WHERE id = 3;
+cqlsh:example> SELECT * FROM users;
+
+ id | fullname    | regdate    | status | username
+----+-------------+------------+--------+----------
+  1 | Иван Иванов | 2020-01-01 |   Busy |  ivanovi
+  2 | Петр Петров | 2020-02-02 |   Busy |  petrovp
+
+(2 rows)
+cqlsh:example> 
+
